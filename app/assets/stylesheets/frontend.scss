@@ -1,0 +1,287 @@
+$red: #d60303;
+
+body{
+ 	font-family: 'Open Sans', sans-serif !important;
+}
+section.logo-nav{
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    ul{
+	    float: right;
+    }//ul
+	a {
+		background-color: $red;
+		color: #fff;
+		height: 40px;
+		width: 100%;
+		padding: 10px 25px;
+		max-width: 100px;
+		display: block;
+		font-size: 14px;
+		border-radius: 3px;
+		margin-top: 18px;
+	}//a
+}/*logo-nav*/
+
+section.site-nav {
+    height: 60px;
+    background-color: #575757;
+    font-size: 18px;
+    padding-top: 19px;
+    color: #fff;
+	
+	ul{
+		li{
+			a{
+				color:#fff;
+				text-decoration: none;
+
+				&:hover{
+					color:#ccc;
+				}
+			}
+		}
+	}
+	@include media("<=991px") {
+		height:auto;
+	}
+
+    .sale-vehicle{
+    	font-size:22px;
+    	position: absolute;
+    	right: 15px;
+    	span{
+			font-size:13px;
+		    width: 100%;
+		    max-width: 74px;
+		    text-align: right;
+		    position: absolute;
+		    right: 90px;
+		    bottom: 0px;
+    	}
+    @include media("<=991px") {
+		display: none;
+	}	
+    }
+}/*site-nav*/
+
+section.banner{
+	background:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("../img/banner.png");
+    height: 247px;
+    margin-bottom: 30px;
+
+    h2 {
+	    color: #fff;
+	    margin-left: 60px;
+	    margin-top: 77px;
+        font-size: 25px;
+
+        @include media("<=445px") {
+			font-size: 15px;
+		    margin-top: 56px;
+	        margin-left: 0;
+		} 
+	}
+
+	input.form-control {
+	    height: 50px;
+	}
+
+    .stylish-input-group .input-group-addon{
+    background: $red; 
+    color: #fff;
+	}
+	.stylish-input-group .form-control{
+		border-right:0; 
+		box-shadow:0 0 0; 
+		border-color:#ccc;
+	}
+	.stylish-input-group button{
+	    border:0;
+	    background:transparent;
+	}
+	.input-group{
+		margin-right: 60px;
+		margin-left: 60px;
+
+		@include media("<=445px") {
+			margin-right: 0;
+			margin-left: 0;
+		} 
+	}
+
+}/*banner*/
+
+
+section.dropdown_area{
+
+    border-bottom: 1px solid#ccc;
+    padding-bottom: 13px;
+
+	.selectpicker{
+	    height: 34px;
+	    width: 100%;
+	    max-width: 250px;
+        margin-bottom: 17px;
+
+    @include media("<=991px") {
+		margin: 15px auto;
+    	display: block; 
+	}    
+           
+	}//selectpicker
+}/*dropdown_area*/
+
+
+section.thumbnail_area {
+    margin-top: 40px;
+
+    .thumbnail{
+    	border: none;
+    }
+    h3{
+    	font-size: 16px;
+    	color: $red;
+	    margin-top: 0;
+    	margin-bottom: 0;
+    }
+    span {
+	    font-size: 12px;
+	    display: block;
+	}
+	
+	.span-inline{
+		display: inline-block;
+	}
+	.span-id::before{
+		content: "|";
+		font-size: 15px;
+	    padding-left: 3px;
+    	padding-right: 3px;
+	}
+	.span-id{
+		display: inline-block;
+	}
+
+	.price_wrapper {
+	    border-top: 1px solid $red;
+	    border-bottom: 1px solid $red;
+	    margin-top: 5px;
+	    margin-bottom: 5px;
+	}
+
+	.retail_price {
+	    display: inline-block;
+	    p {
+		    margin-bottom: 0;
+		}
+	    span {
+		    font-size: 24px !important;
+		    margin-top: -5px;
+	        font-weight: bold;
+
+		}
+	}
+	.bid_price {
+	    float: right;
+	    display: inline-block;
+
+	    p {
+		    margin-bottom: 0;
+		}
+	    span {
+		    font-size: 24px !important;
+		    margin-top: -5px;
+	        font-weight: bold;
+
+		}
+	}
+	a.thumbnail_btn{
+	    width: 49%;
+	    display: inline-block;
+	    height: 27px;
+	    border-radius: 0;
+	    padding-top: 3px;
+	    background-color: $red;
+	    border: none;
+	    color: #fff;
+	}
+}/*thumbnail_area*/
+
+
+section.footer{
+	background-image: url("../img/footer-map.png");
+	background-color: #575757;
+    height: 331px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #fff;
+
+    @include media("<=991px") {
+		height:auto;
+		background-image: none;
+
+	}
+	    
+    ul{
+    	font-size: 14px;
+    	line-height: 32px;
+    	list-style-type: none;
+
+    	@include media("<=991px") {
+		    padding-left: 0;
+		}
+
+    	li{
+	    	border-bottom: 1px solid #ccc;
+    	    padding-left: 8px;
+
+    	    @include media("<=991px") {
+		        border-bottom: none;
+			    padding-left: none;
+			    text-align: left;
+			}
+
+    	    a{
+    	    	color: #fff;
+    	    	text-decoration: none;
+
+    	    	&:hover{
+    	    		color: #ccc;
+    	    	}
+
+       	    }
+	    }	
+    }
+
+    ol{
+
+    	a{
+    		color:#fff;
+    	}
+    	li{
+
+    	}
+    	i.fa {
+		    -moz-border-radius: 50%;
+		    -webkit-border-radius: 50%;
+		    border-radius: 50%;
+		    text-align: center;
+		    width: 35px;
+		    height: 35px;
+		    padding: 9px;
+		    font-size: 15px;
+		    border: 1px solid #fff;
+
+		    &:hover{
+		    	color: #ccc;
+		    }
+		}
+    }
+    .copyright{
+    	margin-top:15px;
+    }
+}
+
+
