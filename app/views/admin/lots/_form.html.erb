@@ -1,0 +1,309 @@
+<%= form_for(admin_lot) do |f| %>
+  <% if admin_lot.errors.any? %>
+    <div class="alert alert-danger" role="alert" id="error_explanation">
+      <% admin_lot.errors.full_messages.each do |message| %>
+        <p class="mb-0"><%= message %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="form-group row">
+    <%= f.label :yard_number, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.number_field :yard_number, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :yard_name, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :yard_name, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :sale_date, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.date_select :sale_date, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :sale_time, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :sale_time, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :item_no, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.number_field :item_no, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :lot_number, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.number_field :lot_number, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :vehicle_type, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :vehicle_type, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :year, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :year, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :make, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :make, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :model_group, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :model_group, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :model_detail, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :model_detail, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :body_style, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :body_style, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :color, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :color, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :damage_description, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :damage_description, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :secondary_damage, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :secondary_damage, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :sale_title_state, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :sale_title_state, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :sale_title_type, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :sale_title_type, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :has_keys, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :has_keys, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :lot_cond_code, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :lot_cond_code, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :vin, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :vin, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :odometer, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.number_field :odometer, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :odometer_brand, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :odometer_brand, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :est_retail_value, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.number_field :est_retail_value, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :engine, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :engine, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :drive, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :drive, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :transmission, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :transmission, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :fuel_type, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :fuel_type, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :cylinders, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.number_field :cylinders, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :runs_drives, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :runs_drives, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :sale_status, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :sale_status, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :high_bid, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.number_field :high_bid, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :special_note, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :special_note, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :city, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :city, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :state, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :state, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :zip, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :zip, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :country, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :country, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :currency_code, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :currency_code, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :thumbnail, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :thumbnail, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :cop_created_date, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.datetime_select :cop_created_date, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :grid_rows, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :grid_rows, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :offer_eligible, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :offer_eligible, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :buy_now_price, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.number_field :buy_now_price, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="offset-sm-2 col-sm-10">
+      <%= f.submit 'Submit', :class => 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

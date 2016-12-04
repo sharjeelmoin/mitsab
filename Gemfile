@@ -13,6 +13,7 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem "devise-bootstrap4-views", git: "git@task.intellecta.co:rails-libs/devise-bootstrap4-views.git"
 gem "font-awesome-rails"
+gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do
 
