@@ -1,7 +1,15 @@
 $red: #d60303;
+$red-hover: #ef2b2b;
+
 
 body{
-	font-family: 'Open Sans', sans-serif !important;
+	font-family: "acumin-pro";
+	
+}
+
+.col-no-padding{
+	padding-left: 0;
+	padding-right: 0;
 }
 section.logo-nav{
 	padding-top: 20px;
@@ -10,18 +18,23 @@ section.logo-nav{
 	ul{
 		float: right;
     }//ul
-    a {
+    .header_buttons {
     	background-color: $red;
     	color: #fff;
     	height: 40px;
     	width: 100%;
-    	padding: 10px 25px;
+    	padding: 9px 25px;
     	max-width: 100px;
     	display: block;
     	font-size: 14px;
     	border-radius: 3px;
     	margin-top: 18px;
-	}//a
+
+    	&:hover{
+    		text-decoration:none;
+    		background-color: $red-hover;
+    	}
+	}//header_buttons
 }/*logo-nav*/
 
 section.site-nav {
@@ -48,17 +61,20 @@ section.site-nav {
 	}
 
 	.sale-vehicle{
-		font-size:22px;
+    	font-size: 22px;
 		position: absolute;
 		right: 15px;
+		bottom: -11px;
+		font-weight: 600;
 		span{
-			font-size:13px;
-			width: 100%;
-			max-width: 74px;
-			text-align: right;
-			position: absolute;
-			right: 90px;
-			bottom: 0px;
+			font-size: 13px;
+    		width: 100%;
+    		max-width: 74px;
+    		text-align: right;
+    		position: absolute;
+    		right: 85px;
+    		bottom: -9px;
+    		font-weight: 400;
 		}
 		@include media("<=991px") {
 			display: none;
@@ -69,13 +85,14 @@ section.site-nav {
 section.banner{
 	background:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), asset-url("banner.png");
 	height: 247px;
-	margin-bottom: 30px;
+    margin-bottom: 60px;
 
 	h2 {
 		color: #fff;
 		margin-left: 60px;
-		margin-top: 77px;
+		margin-top: 65px;
 		font-size: 25px;
+		font-weight: 600;
 
 		@include media("<=445px") {
 			font-size: 15px;
@@ -135,24 +152,43 @@ section.dropdown_area{
 
 
 section.thumbnail_area {
-	margin-top: 40px;
+	margin-top: -30px;
+
+	@include media("<=991px") {
+		margin-top: 30px;
+	}  
 
 	.thumbnail{
 		border: none;
+		padding: 0;
+		height: 350px;
 	}
-	h3{
+	.thumbnail-car-title{
 		font-size: 16px;
 		color: $red;
 		margin-top: 0;
 		margin-bottom: 0;
+		font-family: "acumin-pro";
+		 overflow: hidden;
+   		text-overflow: ellipsis;
+   		display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1; /* number of lines to show */
+
+		&:hover{
+			text-decoration:none;
+			color: $red-hover
+		}
 	}
 	span {
 		font-size: 12px;
 		display: block;
+		font-family: "acumin-pro";
 	}
 	
 	.span-inline{
 		display: inline-block;
+		font-family: "acumin-pro";
 	}
 	.span-id::before{
 		content: "|";
@@ -171,29 +207,39 @@ section.thumbnail_area {
 		margin-bottom: 5px;
 	}
 
-	.retail_price {
+	.retail_price_home {
 		display: inline-block;
+		font-family: "acumin-pro";
 		p {
 			margin-bottom: 0;
+
 		}
 		span {
-			font-size: 24px !important;
+			font-size: 24px;
 			margin-top: -5px;
 			font-weight: bold;
 
+			@include media("<=1199px") {
+			    font-size: 18px;
+			}
 		}
 	}
-	.bid_price {
+	.bid_price_home {
 		float: right;
 		display: inline-block;
+		font-family: "acumin-pro";
 
 		p {
 			margin-bottom: 0;
 		}
 		span {
-			font-size: 24px !important;
+			font-size: 24px;
 			margin-top: -5px;
 			font-weight: bold;
+
+			@include media("<=1199px") {
+			    font-size: 18px;
+			}
 
 		}
 	}
@@ -206,6 +252,17 @@ section.thumbnail_area {
 		background-color: $red;
 		border: none;
 		color: #fff;
+
+		@include media("<=1199px") {
+	        width: 47%;
+    		margin-bottom: 10px;
+    		font-size: 12px;
+    		line-height: 20px;
+		}
+
+		&:hover{
+			background-color: $red-hover;
+		}
 	}
 }/*thumbnail_area*/
 
@@ -217,6 +274,24 @@ section.footer{
 	padding-top: 30px;
 	padding-bottom: 30px;
 	color: #fff;
+    margin-top: 20px;
+    font-family: 'Lato', sans-serif;
+
+    .footer-sign_up {
+	    color: #fff;
+	    border: 1px solid #fff;
+	    padding: 14px 48px;
+	    border-radius: 3px;
+	    width: 100%;
+	    max-width: 162px;
+	    margin-top: 29px;
+	    display: block;
+
+	    &:hover{
+	    	text-decoration:none;
+	    	background-color: #9c9a9a;
+	    }
+	}
 
 	@include media("<=991px") {
 		height:auto;
@@ -290,6 +365,21 @@ section.footer{
 }
 .slider-area{
 	margin-bottom: 15px;
+
+	.price-from{
+		width: 49%;
+	    display: inline-block;
+	    margin-left: 3px;
+	    border-radius: 3px 0 0 3px;
+	    box-shadow: none;
+	}
+	.price-to {
+	    width: 49%;
+	    display: inline-block;
+	    margin-left: -5px;
+	    border-radius: 0 3px 3px 0;
+	    box-shadow: none;
+	}
 }
 .form-container {
 	width: 100%;
@@ -370,7 +460,7 @@ section.footer{
 			padding-right: 0;
 		}
 		&:hover{
-			color:#ccc;
+			background-color: $red-hover;
 			text-decoration: none;
 		}
 	}
@@ -409,6 +499,11 @@ section.footer{
 	.thumbnail{
 		border: none;
 		margin-bottom: 0;
+
+		@include media("<=991px") {
+		    height: auto !important;
+		 	margin-bottom: 20px;
+		}
 	}
 	h3{
 		font-size: 15px;
@@ -455,8 +550,18 @@ section.footer{
 section.why-mitsab{
 	.right-padding{
 		padding-right: 0;
+
 		@include media("<=991px") {
 			padding-right: 15px;
+		}
+
+		.about-img-left{
+	        display: block;
+		    /* width: 100%; */
+		    height: auto;
+		    position: relative;
+		    right: 181px;
+		    max-width: 800px;
 		}
 	}
 	.left-padding{
@@ -465,6 +570,15 @@ section.why-mitsab{
 		@include media("<=991px") {
 			padding-left: 15px;
 			float: none;
+		}
+		.about-img-right{
+	        display: block;
+    		/* width: 100%; */
+    		height: auto;
+    		position: relative;
+    		right: 0px;
+    		max-width: 674px;
+
 		}
 	}
 	.detail {
@@ -482,15 +596,12 @@ section.why-mitsab{
 	h2 {
 		font-size: 26px;
 		line-height: 30px;
-		font-weight: bold;
 	}
 	p {
 		font-size: 15px;
 		line-height: 30px;
-		font-weight: bold;
 	}
 	h5 {
-		font-weight: bold;
 		text-align: right;
 		a{
 			color:#000000;
@@ -516,7 +627,7 @@ section.why-mitsab{
 .export li{
 	font-size: 13px;
 }
-.export li a{
+.export li .bid-input{
 	font-size: 15px;
 	border: 1px solid #ccc;
 	color: #000000;
@@ -530,9 +641,16 @@ section.why-mitsab{
 }
 .col-md-6.no-padding-left {
 	padding-left: 0;
+
+	@include media("<=991px") {
+		padding-left: 15px;
+	}
 }
 .no-padding-right{
 	padding-right: 0;
+	@include media("<=991px") {
+		padding-right: 15px;
+	}
 }
 .thumbnail_color {
 	background-color: #e2e2e2;
@@ -544,34 +662,70 @@ section.why-mitsab{
 	font-size: 18px;
 	font-weight: bold;
 }
-.thumbnail_color h5 {
-	margin-top: 52px;
+.thumbnail_color  {
+	h5{
+		margin-top: 52px;
+
+		@include media("<=400px") {
+	        margin-top: 0;
+		}
+	}
+
+	h6 {
+	    position: absolute;
+	    width: 100%;
+	    max-width: 311px;
+	    border: 1px solid #ccc;
+	    border-top: none;
+	    padding: 8px;
+	    font-size: 13px;
+	    margin-left: -7px;
+	    margin-top: 7px;
+
+	    @include media("<=1199px") {
+		    max-width: 253px;
+		}
+		@include media("<=991px") {
+		    position: relative;
+    		width: 100%;
+    		max-width: none;
+    		margin-top: 19px !important;
+			border: none !important;
+		}
+		    
+	}
 }
 .thumb_buttons {
 	float: right;
 	position: relative;
 	bottom: 110px;
+
+	@include media("<=400px") {
+    	float: none;
+    	position: relative;
+    	bottom: 0;
+	}
 }
-.thumb_buttons .btn-primary {
+.thumb_buttons .thumb_red-btn {
 	display: block;
-	background-color: red;
-	margin-bottom: 9px;
-	padding-left: 18px;
-	padding-top: 6px;
-	padding-right: 18px;
-	color: #fff;
-	height: 32px;
-	text-align: center;
+    background-color: #d60303;
+    margin-bottom: 9px;
+    padding-left: 18px;
+    padding-top: 4px;
+    padding-right: 18px;
+    color: #fff;
+    height: 32px;
+    text-align: center;
+    width: 100%;
+    border: none;
+
+	&:hover{
+		background-color: $red-hover;
+		text-decoration: none;
+		outline: none;
+	}
 }
-.end_text h6 {
-	font-size: 13px;
-	position: absolute;
-	width: 100%;
-	max-width: 311px;
-	border: 1px solid #e2e2e2;
-	bottom: 47px;
-	padding: 9px;
-}
+
 .start_text{
 	background-color: #e6e6e6;
 }
@@ -598,3 +752,48 @@ section.why-mitsab{
 	float: left;
 }
 
+/*slider with thumbnail css*/
+#adv-custom-pager img {
+    padding: 6px;
+}
+
+/*card page css*/
+.card.m-x-auto {
+    width: 100%;
+    max-width: 510px;
+    margin: 0 auto;
+    margin-top: 45px;
+    margin-bottom: 45px;
+
+    .card-header {
+        background-color: #eceaea;
+    	padding: 10px;
+    	border-radius: 2px 2px 0 0;
+    	font-size: 17px;
+    	font-weight: bold;
+    	border: 1px solid #ccc;
+	}
+	.card-block {
+	    border-radius: 0 0 2px 2px;
+    	padding: 12px;
+    	color: black;
+    	background-color: #f3f3f3;
+    	border: 1px solid #ccc;
+    	border-top: none;
+	}
+	input.btn.btn-primary {
+	    background-color: $red;
+	    border: none;
+	    padding: 14px 40px;
+	    width: 100%;
+	    margin-bottom: 12px;
+	    margin-top: 9px;
+
+	    &:hover{
+	    	background-color: $red-hover;
+	    }
+	}
+}
+
+
+/*card page css*/

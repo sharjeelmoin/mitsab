@@ -211,7 +211,7 @@
 				<div class="thumbnail">
 					<img class="img-responsive" src="<%= thumbnail_large(lot.thumbnail) %>" >
 					<div class="caption">
-						<h3><%= lot.year %> <%= lot.make %> <%= lot.model_group %></h3>
+						<a href="/lots/<%= lot.lot_number %>" class="thumbnail-car-title" role="button"><%= lot.year %> <%= lot.make %> <%= lot.model_group %></a>
 						<span>OH - COLUMBUS  - B / CD001</span>
 						<span class="span-inline">Odometer: <%= number_with_delimiter(lot.odometer, :delimiter => ',') %></span>
 						<span class="span-id">ID: <%= lot.lot_number %></span>

@@ -23,10 +23,14 @@
 		</div>
 		<div class="col-md-7">
 			<h1><%= @lot.year %> <%= @lot.make %> <%= @lot.model_group %> - <%= @lot.id %></h1>
+			<%= form_for([ @lot, @bid]) do |f| %>
 			<span class="export">
 				<ul class="list-inline">
 					<li>Your Max Bid:</li>
-					<li><a href="">$25 USD Bid Increment</a></li>
+					<li>
+					<%= f.text_field :amount, class: "bid-input" %>
+					<%= f.hidden_field :lot_id, value: @lot.id %>
+					</li>
 				</ul>
 			</span>
 			<span class="max-bid">
@@ -37,25 +41,19 @@
 				</ul>
 			</span>
 			<div class="col-md-6 no-padding-left">
-				<%= form_for([ @lot, @bid]) do |f| %>
-					<%= f.label :amount %>
-					<%= f.text_field :amount %>
-					<%= f.hidden_field :lot_id, value: @lot.id %>
-					<%= f.submit "Submit" %>
-				<% end %>
+					
 				<div class="thumbnail_color">
 					<p>Current Bid: <span><%= Bid.highest_bid(@lot.id) %></span></p>
 					<h5><span style="display: block;font-size: 13px;font-weight: normal;">154 watching </span> Buy Now for US $14,500</h5>
 					<div class="thumb_buttons">
-						<a class="btn-primary" href="">Make a Bid</a>
-						<a class="btn-primary" href="">Buy Now</a>
+						<input type="submit" class="btn btn-primary thumb_red-btn" value="Make a Bid">
+				<% end %>
+						<input type="submit" class="btn btn-primary thumb_red-btn" value="Buy Now">
 						<p><a href="">Add to watch list</a></p>
 					</div>
-
-				</div>
-				<div class="end_text">
 					<h6>This vehicle is being sold as as is - where is. All bids are binding and all sales are final. </h6>
 				</div>
+				
 			</div>
 			<div class="col-md-6 no-padding-right">
 				<div class="start_text">

@@ -16,8 +16,9 @@ ActiveRecord::Schema.define(version: 20161204155303) do
     t.integer  "amount"
     t.integer  "user_id"
     t.integer  "lot_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "status",     default: 0, null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "lots", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -63,8 +64,9 @@ ActiveRecord::Schema.define(version: 20161204155303) do
     t.string   "grid_rows"
     t.string   "offer_eligible"
     t.integer  "buy_now_price"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.integer  "amount",             default: 0, null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
