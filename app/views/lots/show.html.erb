@@ -28,7 +28,7 @@
 				<ul class="list-inline">
 					<li>Your Max Bid:</li>
 					<li>
-					<%= f.text_field :amount, class: "bid-input" %>
+					<%= f.text_field :amount, class: "bid-input", required: "true", placeholder: number_to_currency( Bid.highest_bid(@lot.id) ) %>
 					<%= f.hidden_field :lot_id, value: @lot.id %>
 					</li>
 				</ul>
@@ -43,12 +43,18 @@
 			<div class="col-md-6 no-padding-left">
 					
 				<div class="thumbnail_color">
-					<p>Current Bid: <span><%= Bid.highest_bid(@lot.id) %></span></p>
-					<h5><span style="display: block;font-size: 13px;font-weight: normal;">154 watching </span> Buy Now for US $14,500</h5>
+					<p>Current Bid: <span><%= number_to_currency( Bid.highest_bid(@lot.id)) %></span></p>
+					<h5><span style="display: block;font-size: 13px;font-weight: normal;">0 watching </span> 
+					<%if @lot.buy_now_price > 0 %>
+					Buy Now for US <%= number_to_currency(@lot.buy_now_price) %>
+					<% end %>
+					</h5>
 					<div class="thumb_buttons">
 						<input type="submit" class="btn btn-primary thumb_red-btn" value="Make a Bid">
 				<% end %>
+				<%if @lot.buy_now_price > 0 %>
 						<input type="submit" class="btn btn-primary thumb_red-btn" value="Buy Now">
+						<% end %>
 						<p><a href="">Add to watch list</a></p>
 					</div>
 					<h6>This vehicle is being sold as as is - where is. All bids are binding and all sales are final. </h6>

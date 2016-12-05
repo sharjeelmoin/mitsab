@@ -124,7 +124,7 @@
 										</div>
 										<div class="bid_price_home">
 											<p>Current Bid</p>
-											<span></span>
+											<span><%= number_to_currency( Bid.highest_bid(lot.id)) %></span>
 										</div>
 									</div><!-- price_wrapper -->
 									<p>

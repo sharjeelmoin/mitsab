@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 	require 'csv'
 
   def home
-  	@lots = Lot.last(8)
+  	@lots = Lot.last(3)
   end
 
   def csv
