@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'pages/home'
   get 'pages/csv'
   get 'search' => 'search#index'
+  get  'about' => "pages#about"
+  get  'contact' => "pages#contact"
   
   devise_for :users
 

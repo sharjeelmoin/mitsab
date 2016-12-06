@@ -216,11 +216,11 @@
 						<span class="span-inline">Odometer: <%= number_with_delimiter(lot.odometer, :delimiter => ',') %></span>
 						<span class="span-id">ID: <%= lot.lot_number %></span>
 						<div class="price_wrapper">
-							<div class="retail_price">
+							<div class="retail_price_home">
 								<p>Retail Price</p>
 								<span><%= number_to_currency(lot.est_retail_value) %></span>
 							</div>
-							<div class="bid_price">
+							<div class="bid_price_home">
 								<p>Current Bid</p>
 								<span></span>
 							</div>
@@ -234,7 +234,12 @@
 			</div><!-- col-3 -->
 			<% end %>
 		</div><!-- row -->
-
-		<%= will_paginate @lots, class: "digg_pagination", :previous_label => '<i class="fa fa-angle-left"></i>', :next_label => '<i class="fa fa-angle-right"></i>' %>
 	</div><!-- container -->
 </section><!-- thumbnail_area -->
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<%= will_paginate @lots, class: "digg_pagination", :previous_label => '<i class="fa fa-angle-left"></i>', :next_label => '<i class="fa fa-angle-right"></i>' %>
+		</div><!-- col-12 -->
+	</div><!-- row -->
+</div><!-- container -->
