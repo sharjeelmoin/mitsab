@@ -262,7 +262,9 @@ section.thumbnail_area {
 			margin-bottom: 0;
 			text-transform: uppercase;
 
-
+			@include media("<=400px") {
+				font-size: 12px;
+			}
 		}
 		span {
 		    font-size: 19px;
@@ -271,6 +273,9 @@ section.thumbnail_area {
 
 			@include media("<=1199px") {
 			    font-size: 18px;
+			}
+			@include media("<=400px") {
+				font-size: 16px;
 			}
 		}
 	}
@@ -282,7 +287,9 @@ section.thumbnail_area {
 		p {
 			margin-bottom: 0;
 			text-transform: uppercase;
-
+			@include media("<=400px") {
+				font-size: 12px;
+			}
 		}
 		span {
 			font-size: 19px;
@@ -291,6 +298,9 @@ section.thumbnail_area {
 
 			@include media("<=1199px") {
 			    font-size: 18px;
+			}
+			@include media("<=400px") {
+				font-size: 16px;
 			}
 
 		}
@@ -671,12 +681,13 @@ section.why-mitsab{
     	padding-right: 64px;
 		@include media("<=1199px") {
 			padding-top: 0;
-			padding-left: 20px;
+		    padding-left: 15px;
+    		padding-right: 15px;
 		}
 		@include media("<=991px") {
 			padding-top: 0;
-			padding-left: 20px;
-			padding-right: 0;
+			padding-left: 15px;
+			padding-right: 15px;
 
 		}
 	}
@@ -687,6 +698,10 @@ section.why-mitsab{
 	p {
 		font-size: 15px;
 		line-height: 30px;
+		@include media("<=400px") {
+			line-height: 20px;
+
+		}
 	}
 	h5 {
 		text-align: right;
