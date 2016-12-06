@@ -132,7 +132,7 @@ section.banner{
 		border-right:0; 
 		box-shadow:0 0 0; 
 		border-color:#ccc;
-		border-radius: 6px 0 0 6px;
+		border-radius: 11px 0 0 11px;	
 	}
 	.stylish-input-group button{
 		border:0;
@@ -144,12 +144,12 @@ section.banner{
 
 		.input-group-addon{
 		    background: #d60303;
-		    color: #fff;
-		    border: 5px solid #fff;
-		    border-radius: 7px;
-		    position: relative;
-		    left: -7px;
-		    font-size: 20px;
+	        color: #fff;
+    		border: 5px solid #fff;
+    		border-radius: 11px !important;
+    		position: relative;
+    		left: -10px;
+    		font-size: 20px;
 		}
 
 		@include media("<=445px") {
@@ -306,8 +306,16 @@ section.thumbnail_area {
 		}
 	}
 }/*thumbnail_area*/
-
-
+.search-pagination{
+	text-align: center;
+	margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+}
+.digg_pagination .current {
+    background: $red;
+    border: 1px solid $red;
+}
 section.footer{
 	background-image: asset-url("footer-map.png");
     background-color: #575757;
