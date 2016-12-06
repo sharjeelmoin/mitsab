@@ -562,6 +562,12 @@ section.why-mitsab{
 		    position: relative;
 		    right: 181px;
 		    max-width: 800px;
+
+		    @include media("<=991px") {
+			    width: 100%;
+    			right: 0;
+    			max-width: none;
+			}
 		}
 	}
 	.left-padding{
@@ -579,11 +585,17 @@ section.why-mitsab{
     		right: 0px;
     		max-width: 674px;
 
+    		@include media("<=991px") {
+			    width: 100%;
+    			max-width: none;
+			}
+
 		}
 	}
 	.detail {
 		padding-top: 30px;
-		padding-left: 50px;
+	    padding-left: 50px;
+    	padding-right: 64px;
 		@include media("<=1199px") {
 			padding-top: 0;
 			padding-left: 20px;
@@ -591,6 +603,8 @@ section.why-mitsab{
 		@include media("<=991px") {
 			padding-top: 0;
 			padding-left: 20px;
+			padding-right: 0;
+
 		}
 	}
 	h2 {
@@ -652,17 +666,19 @@ section.why-mitsab{
 		padding-right: 15px;
 	}
 }
-.thumbnail_color {
+
+.thumbnail_color  {
 	background-color: #e2e2e2;
 	padding: 7px;
 	border-radius: 3px 3px 0 0;
 	margin-top: 20px;
-}
-.thumbnail_color span {
-	font-size: 18px;
-	font-weight: bold;
-}
-.thumbnail_color  {
+    padding-bottom: 13px;
+
+
+    span{
+    	font-size: 18px;
+		font-weight: bold;
+    }
 	h5{
 		margin-top: 52px;
 
@@ -680,7 +696,7 @@ section.why-mitsab{
 	    padding: 8px;
 	    font-size: 13px;
 	    margin-left: -7px;
-	    margin-top: 7px;
+	    margin-top: 14px;
 
 	    @include media("<=1199px") {
 		    max-width: 253px;
@@ -699,6 +715,7 @@ section.why-mitsab{
 	float: right;
 	position: relative;
 	bottom: 110px;
+    margin-top: 15px;
 
 	@include media("<=400px") {
     	float: none;
