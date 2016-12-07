@@ -13,7 +13,12 @@
 			  	<!-- Wrapper for slides -->
 			  	<div class="carousel-inner" role="listbox">
 			    	<div class="item active">
-			      		<img class="img-responsive" src="<%= asset_path('slider-img-1')%>" alt="...">
+			      		<img class="img-responsive" src="<%= asset_path('slider-img-3')%>" alt="...">
+			      		<div class="carousel-caption">
+					        <h2>2008 FORD CROWN VIC</h2>
+					        <h4>Current Bid: $4000</h4>
+					        <h4>Buy Price: $6500</h4>
+				      	</div>
 			    	</div>
 			  	</div>
 			  	<!-- Controls -->
@@ -26,7 +31,46 @@
 					<span class="sr-only">Next</span>
 				</a>
 				</div>
+				<div class="cars_arrival thumbnail_area">
+					<div class="panel panel-default">
+				  		<div class="panel-heading">
+					    	<h3 class="panel-title" style="color: #fff;">NEWEST ARRIVAL</h3>
+					  	</div>
+					  	<div class="panel-body ">
+					  		<% @lots.each do | lot | %>
+					    	<div class="col-md-4 col-sm-6 col-xs-12">
+								<div class="thumbnail">
+									<img class="img-responsive" src="<%= thumbnail_large(lot.thumbnail) %>" >
+									<div class="caption">
+										<a href="/lots/<%= lot.lot_number %>" class="thumbnail-car-title" role="button"><%= lot.year %> <%= lot.make %> <%= lot.model_group %></a>
+										<span>OH - COLUMBUS  - B / CD001</span>
+										<span class="span-inline">Odometer: <%= number_with_delimiter(lot.odometer, :delimiter => ',') %></span>
+										<span class="span-id">ID: <%= lot.lot_number %></span>
+										<div class="price_wrapper">
+											<div class="retail_price_home">
+												<p>Retail Price</p>
+												<span><%= number_to_currency(lot.est_retail_value) %></span>
+											</div>
+											<div class="bid_price_home">
+												<p>Current Bid</p>
+												<span><%= number_to_currency( Bid.highest_bid(lot.id)) %></span>
+											</div>
+										</div><!-- price_wrapper -->
+										<p>
+											<a href="/lots/<%= lot.lot_number %>" class="btn btn-primary thumbnail_btn" role="button">Buy Now</a> 
+											<a href="/lots/<%= lot.lot_number %>" class="btn btn-default thumbnail_btn" role="button">Join Auction</a>
+										</p>
+									</div><!-- caption -->
+								</div><!-- thumbnail -->
+							</div><!-- col-3 -->
+					    	<% end %>
+					  	</div><!-- panel body -->
+					</div><!-- panel default -->
+				</div>
+
+				
 			</div><!-- col-9 -->
+
 			<div class="col-md-3">
 				<div class="form-container">
 					<h3>Vehicle Finder</h3>
@@ -99,49 +143,7 @@
 		</div><!-- row -->
 	</div><!-- container -->
 </section><!-- slider-area -->
-<section class="cars_arrival thumbnail_area">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-9 col-no-padding">
-				<div class="panel panel-default">
-			  		<div class="panel-heading">
-				    	<h3 class="panel-title" style="color: #fff;">NEWEST ARRIVAL</h3>
-				  	</div>
-				  	<div class="panel-body ">
-				  		<% @lots.each do | lot | %>
-				    	<div class="col-md-4 col-sm-6 col-xs-12">
-							<div class="thumbnail">
-								<img class="img-responsive" src="<%= thumbnail_large(lot.thumbnail) %>" >
-								<div class="caption">
-									<a href="/lots/<%= lot.lot_number %>" class="thumbnail-car-title" role="button"><%= lot.year %> <%= lot.make %> <%= lot.model_group %></a>
-									<span>OH - COLUMBUS  - B / CD001</span>
-									<span class="span-inline">Odometer: <%= number_with_delimiter(lot.odometer, :delimiter => ',') %></span>
-									<span class="span-id">ID: <%= lot.lot_number %></span>
-									<div class="price_wrapper">
-										<div class="retail_price_home">
-											<p>Retail Price</p>
-											<span><%= number_to_currency(lot.est_retail_value) %></span>
-										</div>
-										<div class="bid_price_home">
-											<p>Current Bid</p>
-											<span><%= number_to_currency( Bid.highest_bid(lot.id)) %></span>
-										</div>
-									</div><!-- price_wrapper -->
-									<p>
-										<a href="/lots/<%= lot.lot_number %>" class="btn btn-primary thumbnail_btn" role="button">Buy Now</a> 
-										<a href="/lots/<%= lot.lot_number %>" class="btn btn-default thumbnail_btn" role="button">Join Auction</a>
-									</p>
-								</div><!-- caption -->
-							</div><!-- thumbnail -->
-						</div><!-- col-3 -->
-				    	<% end %>
-				  	</div><!-- panel body -->
-				</div><!-- panel default -->
-			</div><!-- col-9 -->	
-		</div><!-- row -->
 
-	</div><!-- container -->
-</section><!-- cars_arrival -->
 <section class="why-mitsab">
 	<div class="container">
 		<div class="row">
