@@ -999,7 +999,9 @@ section.contact{
     height: 40px;
     margin-top: -5px;
 }
-
+.header_responsive_button{
+	display: none;
+}
 @media (max-width: 991px) {
 	/* #menu is the original menu */
 	 #menu {
