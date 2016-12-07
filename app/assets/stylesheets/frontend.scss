@@ -15,11 +15,8 @@ section.logo-nav{
 	padding-top: 20px;
 	padding-bottom: 20px;
 
-	img{
-		@include media("<=767px") {
-	    	margin: 0 auto;
-	    	display: block;
-		}
+	@include media("<=991px") {
+    	display: none;
 	}
 
 	ul{
@@ -37,8 +34,8 @@ section.logo-nav{
     	border-radius: 3px;
     	margin-top: 18px;
 
-    	@include media("<=500px") {
-	    	max-width: 93px;
+    	@include media("<=991px") {
+	    	display: none;
 		} 
 
     	&:hover{
@@ -55,20 +52,53 @@ section.site-nav {
 	padding-top: 17px;
 	color: #fff;
 	
+	@include media("<=991px") {
+    	.header_responsive_button{
+			background-color: $red;
+	    	color: #fff;
+	    	height: 40px;
+	    	width: 100%;
+	    	padding: 9px 25px;
+	    	max-width: 100px;
+	    	display: block;
+	    	font-size: 14px;
+	    	border-radius: 3px;
+	    	margin-top: 18px;
+	    	border-radius: 3px;
+
+	    	&:hover{
+	    		text-decoration:none;
+	    		background-color: $red-hover;
+	    		border-radius: 3px;
+	    		outline: none;
+	    	}
+		}
+	} 
+
+
 	ul{
 		li{
 			a{
 				color:#fff;
 				text-decoration: none;
 
+				@include media("<=991px") {
+					color: #000000;
+				    text-decoration: none;
+				    margin: 0 auto;
+				    text-align: center;
+				    font-weight: bold;
+				}
+
 				&:hover{
-					color:#ccc;
+					color:#fff;
 				}
 			}
 		}
 	}
 	@include media("<=991px") {
 		height:auto;
+		background-color: #fff;
 	}
 
 	/*.sale-vehicle{
@@ -953,3 +983,41 @@ section.contact{
 		font-size: 24px;
 	}
 }/*contact*/
+
+/*slick nav*/
+.slicknav_menu {
+    font-size: 16px;
+    background: #fff !important;
+    padding: 5px;
+    color: #000000 !important;
+}
+
+.slicknav_menu {
+	display:none ;
+}
+.slicknav_brand img {
+    height: 40px;
+    margin-top: -5px;
+}
+
+@media (max-width: 991px) {
+	/* #menu is the original menu */
+	 #menu {
+		display:none !important;
+	}
+	
+	.slicknav_menu {
+		display:block !important;
+	}
+	.slicknav_nav .sale-vehicle,.sale-vehicle-num{
+		display: none;
+	}
+
+	.slicknav_nav .sale-vehicle-num{
+		display: none;
+	}
+	.header_responsive_button{
+		display: block;
+	}
+}
+/*slicknav*/
