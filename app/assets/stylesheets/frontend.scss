@@ -671,46 +671,26 @@ section.footer{
 section.why-mitsab{
 	.right-padding{
 		padding-right: 0;
+    	padding-left: 0;
+
 
 		@include media("<=991px") {
-			padding-right: 15px;
+		    float: none !important;
+		    margin: 0 auto;
+		    padding-left: 15px;
+		    padding-right:15px;
 		}
 
-		.about-img-left{
-	        display: block;
-		    /* width: 100%; */
-		    height: auto;
-		    position: relative;
-		    right: 181px;
-		    max-width: 800px;
-
-		    @include media("<=991px") {
-			    width: 100%;
-    			right: 0;
-    			max-width: none;
-			}
-		}
 	}
 	.left-padding{
-		padding-left: 0;
+	    padding-right: 0;
+   		padding-left: 0;
 		float: right;
 		@include media("<=991px") {
-			padding-left: 15px;
-			float: none;
-		}
-		.about-img-right{
-	        display: block;
-    		/* width: 100%; */
-    		height: auto;
-    		position: relative;
-    		right: 0px;
-    		max-width: 674px;
-
-    		@include media("<=991px") {
-			    width: 100%;
-    			max-width: none;
-			}
-
+		    float: none !important;
+		    margin: 0 auto;
+		    padding-right: 15px;
+		    padding-left: 15px;
 		}
 	}
 	.detail {
