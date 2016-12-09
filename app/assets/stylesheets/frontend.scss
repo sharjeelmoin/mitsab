@@ -6,8 +6,45 @@ body{
 	font-family: "acumin-pro";
 	
 }
+#affix-top{
+    width: 100% !important;
+    max-width: 280px;
+    top: 67px !important;
+    z-index: 9999;
+}
+.form-container{
+    &.affix{
+        top:auto;
+        bottom:auto;
+    }
 
+    &.affix-top{
+        
+    }
 
+    &.affix-bottom{
+        position:relative;
+        top:auto;
+    }
+}
+.affix-menu{
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+.affix-search{
+    width: 100%;
+    top: 59px;
+    z-index: 9999;
+    background-color: #fff;
+}
+.accordion-area{
+	display: none;
+
+	@include media("<=991px") {
+    	display: block;
+	}
+}
 section.logo-nav{
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -49,7 +86,7 @@ section.site-nav {
 	padding-top: 17px;
 	color: #fff;
 	
-	@include media("<=991px") {
+	/*@include media("<=991px") {
     	.header_responsive_button{
 			background-color: $red;
 	    	color: #fff;
@@ -70,7 +107,7 @@ section.site-nav {
 	    		outline: none;
 	    	}
 		}
-	} 
+	} */
 
 
 	ul{
@@ -201,12 +238,43 @@ section.banner{
 
 }/*banner*/
 
-
-section.dropdown_area{
+.accordion-area{
 
 	border-bottom: 1px solid#ccc;
 	padding-bottom: 13px;
 
+	.selectpicker{
+		height: 34px;
+		width: 100%;
+		max-width: 250px;
+		margin-bottom: 17px;
+
+		@include media("<=991px") {
+			margin: 15px auto;
+			display: block; 
+		}    
+		
+	}//selectpicker
+	.res_btn {
+	    background-color: $red;
+	    border: none;
+	    margin: 0 auto;
+	    display: block;
+	    border-radius: 3px;
+	    padding: 8px;
+	    font-size: 13px;
+	    &:hover{
+	    	background-color: $red-hover;
+	    }
+	}
+}
+section.dropdown_area{
+
+	border-bottom: 1px solid#ccc;
+	padding-bottom: 13px;
+	@include media("<=991px") {
+    	display: none;
+	}
 	.selectpicker{
 		height: 34px;
 		width: 100%;
@@ -498,6 +566,22 @@ section.footer{
 	    margin-left: -5px;
 	    border-radius: 0 3px 3px 0;
 	    box-shadow: none;
+	}
+	.carousel-caption{
+		h2{
+			@include media("<=991px") {
+			    font-size: 18px;
+	    		margin: 0;
+			}
+		}
+		h4{
+			@include media("<=991px") {
+			    font-size: 14px;
+			    padding: 0;
+			    margin: 0;
+			}
+			
+		}
 	}
 }
 .carousel-caption{
@@ -989,6 +1073,9 @@ section.contact{
 }
 .header_responsive_button{
 	display: none;
+}
+.slicknav_nav {
+    margin-top: 65px !important;
 }
 @media (max-width: 991px) {
 	/* #menu is the original menu */
