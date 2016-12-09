@@ -10,7 +10,7 @@ body{
     width: 100% !important;
     max-width: 280px;
     top: 67px !important;
-    z-index: 9999;
+    z-index: 10;
 }
 .form-container{
     &.affix{
@@ -30,12 +30,12 @@ body{
 .affix-menu{
     top: 0;
     width: 100%;
-    z-index: 9999;
+    z-index: 10;
 }
 .affix-search{
     width: 100%;
     top: 59px;
-    z-index: 9999;
+    z-index: 10;
     background-color: #fff;
 }
 .accordion-area{
