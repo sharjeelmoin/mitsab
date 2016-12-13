@@ -6,27 +6,6 @@ body{
 	font-family: "acumin-pro";
 	
 }
-#affix-top{
-    width: 100% !important;
-    max-width: 280px;
-    top: 67px !important;
-    z-index: 10;
-}
-.form-container{
-    &.affix{
-        top:auto;
-        bottom:auto;
-    }
-
-    &.affix-top{
-        
-    }
-
-    &.affix-bottom{
-        position:relative;
-        top:auto;
-    }
-}
 .affix-menu{
     top: 0;
     width: 100%;
@@ -167,7 +146,8 @@ section.site-nav {
 	    font-size: 22px;
 	    font-weight: bold;
 	    position: relative;
-    	bottom: 4px;
+    	bottom: 7px;
+    	right: 8px;
     	@include media("<=991px") {
 			display: none;
 		}	
@@ -193,10 +173,11 @@ section.banner{
 		} 
 	}
 
+
+
 	input.form-control {
 		height: 50px;
 	    border: none;
-
 	}
 
 	.stylish-input-group .input-group-addon{
@@ -573,6 +554,10 @@ section.footer{
 			    font-size: 18px;
 	    		margin: 0;
 			}
+			@include media("<=400px") {
+			    font-size: 9px;
+	    		margin: 0;
+			}
 		}
 		h4{
 			@include media("<=991px") {
@@ -580,8 +565,15 @@ section.footer{
 			    padding: 0;
 			    margin: 0;
 			}
+			@include media("<=400px") {
+			    font-size: 6px;
+	    		margin: 0;
+			}
 			
 		}
+	}
+	.form-input select{
+		height: 36px;
 	}
 }
 .carousel-caption{
@@ -592,6 +584,7 @@ section.footer{
 	border: 1px solid #ccc;
 	padding: 20px;
 	border-radius: 2px;
+	background-color: #fff;
 	@include media("<=991px") {
 		margin-top: 15px;
 	}
@@ -753,6 +746,7 @@ section.footer{
 	}
 }/*cars_arrival*/
 section.why-mitsab{
+	margin-bottom: -20px;
 	.right-padding{
 		padding-right: 0;
     	padding-left: 0;
