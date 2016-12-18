@@ -2,144 +2,149 @@
 <section class="thumbnail-area">
 	<div class="container">
 		<div class="row">
+			<div class="col-lg-12">
+				<%= flash_messages %>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-md-5">
 
 
-			<%= render :partial => "slider" %>
-			<!-- empty element for pager links -->
-			<div id=adv-custom-pager class="center external"></div>
+				<%= render :partial => "slider" %>
+				<!-- empty element for pager links -->
+				<div id=adv-custom-pager class="center external"></div>
 
-		</div>
-		<div class="col-md-7">
-			<h1><%= @lot.year %> <%= @lot.make %> <%= @lot.model_group %> - <%= @lot.id %></h1>
-			<%= form_for([ @lot, @bid]) do |f| %>
-			<span class="export">
-				<ul class="list-inline">
-					<li>Your Max Bid:</li>
-					<li>
-					<%= f.text_field :amount, class: "bid-input", required: "true", placeholder: number_to_currency( Bid.highest_bid(@lot.id) ) %>
-					<%= f.hidden_field :lot_id, value: @lot.id %>
-					</li>
-				</ul>
-			</span>
-			<span class="max-bid">
-				<ul class="list-inline">
-					<li><i class="fa fa-print" aria-hidden="true"></i> Print</li>
-					<li><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</li>
-					<li><a href="#">Back to result</a></li>
-				</ul>
-			</span>
-			<div class="col-md-6 no-padding-left">
+			</div>
+			<div class="col-md-7">
+				<h1><%= @lot.year %> <%= @lot.make %> <%= @lot.model_group %> - <%= @lot.id %></h1>
+				<%= form_for([ @lot, @bid]) do |f| %>
+				<span class="export">
+					<ul class="list-inline">
+						<li>Your Max Bid:</li>
+						<li>
+							<%= f.text_field :amount, class: "bid-input", required: "true", placeholder: number_to_currency( Bid.highest_bid(@lot.id) ) %>
+							<%= f.hidden_field :lot_id, value: @lot.id %>
+						</li>
+					</ul>
+				</span>
+				<span class="max-bid">
+					<ul class="list-inline">
+						<li><i class="fa fa-print" aria-hidden="true"></i> Print</li>
+						<li><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</li>
+						<li><a href="#">Back to result</a></li>
+					</ul>
+				</span>
+				<div class="col-md-6 no-padding-left">
 					
-				<div class="thumbnail_color">
-					<p>Current Bid: <span><%= number_to_currency( Bid.highest_bid(@lot.id)) %></span></p>
-					<h5><span style="display: block;font-size: 13px;font-weight: normal;">0 watching </span> 
-					<%if @lot.buy_now_price > 0 %>
-					Buy Now for US <%= number_to_currency(@lot.buy_now_price) %>
-					<% end %>
-					</h5>
-					<div class="thumb_buttons">
-						<input type="submit" class="btn btn-primary thumb_red-btn" value="Make a Bid">
-				<% end %>
-				<%if @lot.buy_now_price > 0 %>
-						<input type="submit" class="btn btn-primary thumb_red-btn" value="Buy Now">
-						<% end %>
-						<p><a href="">Add to watch list</a></p>
+					<div class="thumbnail_color">
+						<p>Current Bid: <span><%= number_to_currency( Bid.highest_bid(@lot.id)) %></span></p>
+						<h5><span style="display: block;font-size: 13px;font-weight: normal;">0 watching </span> 
+							<%if @lot.buy_now_price > 0 %>
+							Buy Now for US <%= number_to_currency(@lot.buy_now_price) %>
+							<% end %>
+						</h5>
+						<div class="thumb_buttons">
+							<input type="submit" class="btn btn-primary thumb_red-btn" value="Make a Bid">
+							<% end %>
+							<%if @lot.buy_now_price > 0 %>
+							<input type="submit" class="btn btn-primary thumb_red-btn" value="Buy Now">
+							<% end %>
+							<p><a href="">Add to watch list</a></p>
+						</div>
+						<h6>This vehicle is being sold as as is - where is. All bids are binding and all sales are final. </h6>
 					</div>
-					<h6>This vehicle is being sold as as is - where is. All bids are binding and all sales are final. </h6>
+					
 				</div>
-				
-			</div>
-			<div class="col-md-6 no-padding-right">
-				<div class="start_text">
-					<h6>Seller Info</h6>
+				<div class="col-md-6 no-padding-right">
+					<div class="start_text">
+						<h6>Seller Info</h6>
 
-					<% if @lot.yard_name.present? %>
-					<p><span>Location:</span><%= @lot.yard_name %></p>
-					<% end %>
+						<% if @lot.yard_name.present? %>
+						<p><span>Location:</span><%= @lot.yard_name %></p>
+						<% end %>
 
-					<% if @lot.grid_rows.present? %>
-					<p><span>Lane/Item/Grid/Row</span><%= @lot.grid_rows %></p>
-					<% end %>
+						<% if @lot.grid_rows.present? %>
+						<p><span>Lane/Item/Grid/Row</span><%= @lot.grid_rows %></p>
+						<% end %>
 
-					<% if @lot.cop_created_date.present? %>
-					<p><span>Sale Date:</span><%= date_long(@lot.cop_created_date) %></p>
-					<% end %>
+						<% if @lot.cop_created_date.present? %>
+						<p><span>Sale Date:</span><%= date_long(@lot.cop_created_date) %></p>
+						<% end %>
 
-					<% if @lot.cop_created_date.present? && @lot.cop_created_date.future? %>
-					<p style="color:red;"><span style="color: #000000;">Time Left:</span><%= distance_of_time_in_words(@lot.cop_created_date, Time.now) %></p>
-					<% end %>
+						<% if @lot.cop_created_date.present? && @lot.cop_created_date.future? %>
+						<p style="color:red;"><span style="color: #000000;">Time Left:</span><%= distance_of_time_in_words(@lot.cop_created_date, Time.now) %></p>
+						<% end %>
 
+					</div>
 				</div>
-			</div>
-			<div class="bottom-table">
-				<table class="table">
-					<thead>
-						<tr>
-							<th colspan="2"><h1>Description</h1></th>       
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Lot #: <%= @lot.lot_number %></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>Odometer</td>
-							<td><%= @lot.odometer %></td>
-						</tr>
-						<tr>
-							<td>Primary Damage</td>
-							<td><%= @lot.damage_description %></td>
-						</tr>
-						<tr>
-							<td>Secondary Damage</td>
-							<td><%= @lot.secondary_damage %></td>
-						</tr>
-						<tr>
-							<td>Est. Retail Value</td>
-							<td><%= @lot.est_retail_value %></td>
-						</tr>
-						<tr>
-							<td>Vin</td>
-							<td><%= @lot.vin %></td>
-						</tr>
-						<tr>
-							<td>Body Style</td>
-							<td><%= @lot.body_style %></td>
-						</tr>
-						<tr>
-							<td>Color</td>
-							<td><%= @lot.color %></td>
-						</tr>
-						<tr>
-							<td>Engine Type</td>
-							<td><%= @lot.engine %></td>
-						</tr>
-						<tr>
-							<td>Drive</td>
-							<td><%= @lot.drive %></td>
-						</tr>
-						<tr>
-							<td>Cylinders</td>
-							<td><%= @lot.cylinders %></td>
-						</tr>
-						<tr>
-							<td>Fuel</td>
-							<td><%= @lot.fuel_type %></td>
-						</tr>
-						<tr>
-							<td>Keys</td>
-							<td><%= @lot.has_keys %></td>
-						</tr>
-						<tr>
-							<td>Notes</td>
-							<td><%= @lot.special_note %></td>
-						</tr>
-					</tbody>
-				</table>
-			</div><!-- bottom-table -->
-		</div><!-- col-7 -->
-	</div><!-- row -->
-</div><!-- container -->
+				<div class="bottom-table">
+					<table class="table">
+						<thead>
+							<tr>
+								<th colspan="2"><h1>Description</h1></th>       
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Lot #: <%= @lot.lot_number %></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Odometer</td>
+								<td><%= @lot.odometer %></td>
+							</tr>
+							<tr>
+								<td>Primary Damage</td>
+								<td><%= @lot.damage_description %></td>
+							</tr>
+							<tr>
+								<td>Secondary Damage</td>
+								<td><%= @lot.secondary_damage %></td>
+							</tr>
+							<tr>
+								<td>Est. Retail Value</td>
+								<td><%= @lot.est_retail_value %></td>
+							</tr>
+							<tr>
+								<td>Vin</td>
+								<td><%= @lot.vin %></td>
+							</tr>
+							<tr>
+								<td>Body Style</td>
+								<td><%= @lot.body_style %></td>
+							</tr>
+							<tr>
+								<td>Color</td>
+								<td><%= @lot.color %></td>
+							</tr>
+							<tr>
+								<td>Engine Type</td>
+								<td><%= @lot.engine %></td>
+							</tr>
+							<tr>
+								<td>Drive</td>
+								<td><%= @lot.drive %></td>
+							</tr>
+							<tr>
+								<td>Cylinders</td>
+								<td><%= @lot.cylinders %></td>
+							</tr>
+							<tr>
+								<td>Fuel</td>
+								<td><%= @lot.fuel_type %></td>
+							</tr>
+							<tr>
+								<td>Keys</td>
+								<td><%= @lot.has_keys %></td>
+							</tr>
+							<tr>
+								<td>Notes</td>
+								<td><%= @lot.special_note %></td>
+							</tr>
+						</tbody>
+					</table>
+				</div><!-- bottom-table -->
+			</div><!-- col-7 -->
+		</div><!-- row -->
+	</div><!-- container -->
 </section><!-- thumbnail-area -->

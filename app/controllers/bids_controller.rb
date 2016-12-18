@@ -5,11 +5,13 @@ class BidsController < ApplicationController
   	@bid = Bid.find_or_initialize_by(lot_id: params[:lot_id], user_id: current_user.id)
   	@bid.assign_attributes(bid_params)
 
-  		if @bid.save
-  			render json: @bid
-  		else
-  			render json: @bid.errors
-  		end
+  		respond_to do |format|
+        if @bid.save
+          format.html { redirect_to lot_path(params[:lot_id]), notice: 'Bid added successfully.' }
+        else
+          format.html { redirect_to lot_path(params[:lot_id]), :flash => { :error => @bid.errors.full_messages.join(', ') } }
+        end
+      end
   end
 
   def update

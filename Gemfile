@@ -15,6 +15,7 @@ gem "devise-bootstrap4-views", git: "git@task.intellecta.co:rails-libs/devise-bo
 gem "font-awesome-rails"
 gem 'will_paginate', '~> 3.1.0'
 gem 'smarter_csv'
+gem 'unveil-rails', '~> 0.2.1'
 group :development, :test do
 
   gem 'byebug', platform: :mri
