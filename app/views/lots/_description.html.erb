@@ -1,0 +1,65 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th colspan="2"><h1>Description</h1></th>       
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Lot #: <%= @lot.lot_number %></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Odometer</td>
+			<td><%= @lot.odometer %></td>
+		</tr>
+		<tr>
+			<td>Primary Damage</td>
+			<td><%= @lot.damage_description %></td>
+		</tr>
+		<tr>
+			<td>Secondary Damage</td>
+			<td><%= @lot.secondary_damage %></td>
+		</tr>
+		<tr>
+			<td>Est. Retail Value</td>
+			<td><%= @lot.est_retail_value %></td>
+		</tr>
+		<tr>
+			<td>Vin</td>
+			<td><%= @lot.vin %></td>
+		</tr>
+		<tr>
+			<td>Body Style</td>
+			<td><%= @lot.body_style %></td>
+		</tr>
+		<tr>
+			<td>Color</td>
+			<td><%= @lot.color %></td>
+		</tr>
+		<tr>
+			<td>Engine Type</td>
+			<td><%= @lot.engine %></td>
+		</tr>
+		<tr>
+			<td>Drive</td>
+			<td><%= @lot.drive %></td>
+		</tr>
+		<tr>
+			<td>Cylinders</td>
+			<td><%= @lot.cylinders %></td>
+		</tr>
+		<tr>
+			<td>Fuel</td>
+			<td><%= @lot.fuel_type %></td>
+		</tr>
+		<tr>
+			<td>Keys</td>
+			<td><%= @lot.has_keys %></td>
+		</tr>
+		<tr>
+			<td>Notes</td>
+			<td><%= @lot.special_note %></td>
+		</tr>
+	</tbody>
+</table>

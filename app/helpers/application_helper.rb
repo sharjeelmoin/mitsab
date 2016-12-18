@@ -1,8 +1,12 @@
 module ApplicationHelper
 
 	def thumbnail_large(thumbnail)
-		url = thumbnail[0...-4]
-		thumbnail = "http://#{url}X.JPG"
+		if thumbnail.present?
+			url = thumbnail[0...-4]
+			thumbnail = "http://#{url}X.JPG"
+		else
+			thumbnail = "/no-car.png"
+		end
 		return thumbnail
 	end
 

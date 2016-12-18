@@ -10,6 +10,6 @@ class LotsController < ApplicationController
   private
 
   def set_lot
-      @lot = Lot.find_by_lot_number(params[:id])
+      @lot = Lot.find(params[:id])
   end
 end

@@ -5,18 +5,7 @@
 			<div class="col-md-5">
 
 
-				<div class="cycle-slideshow" 
-				data-cycle-fx=scrollHorz
-				data-cycle-timeout=0
-				data-cycle-pager="#adv-custom-pager"
-				data-cycle-pager-template="<a href='#'><img src='{{src}}' width=91.4 height=80></a>"
-				>
-				<img class="img-responsive" src="<%= slider_image(@lot.thumbnail,1) %>">
-				<img class="img-responsive" src="<%= slider_image(@lot.thumbnail,2) %>">
-				<img class="img-responsive" src="<%= slider_image(@lot.thumbnail,3) %>">
-				<img class="img-responsive" src="<%= slider_image(@lot.thumbnail,4) %>">
-				<img class="img-responsive" src="<%= slider_image(@lot.thumbnail,5) %>">
-			</div>
+			<%= render :partial => "slider" %>
 			<!-- empty element for pager links -->
 			<div id=adv-custom-pager class="center external"></div>
 
