@@ -1,10 +1,12 @@
 class Admin::LotsController < ApplicationController
+  before_action :authenticate_user!
+  layout 'admin'
   before_action :set_admin_lot, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/lots
   # GET /admin/lots.json
   def index
-    @admin_lots = Lot.all
+    @admin_lots = Lot.paginate(:page => params[:page], :per_page => 8)
   end
 
   # GET /admin/lots/1

@@ -16,6 +16,10 @@ gem "font-awesome-rails"
 gem 'will_paginate', '~> 3.1.0'
 gem 'smarter_csv'
 gem 'unveil-rails', '~> 0.2.1'
+gem 'resque', :require => "resque/server"
+gem 'sinatra', '2.0.0.beta2'
+#gem 'sidekiq'
+gem 'carrierwave', git: "https://github.com/carrierwaveuploader/carrierwave.git"
 group :development, :test do
 
   gem 'byebug', platform: :mri

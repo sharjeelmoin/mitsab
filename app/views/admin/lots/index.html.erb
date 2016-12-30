@@ -1,107 +1,67 @@
-<h1 class="int_title_h1">
-  Admin Lots
-  <%= link_to 'New Admin Lot', new_admin_lot_path, :class=> "btn btn-small btn-primary pull-right" %>
-</h1>
-<div class="table-responsive">
-  <table class="table table-striped table-hover">
-    <thead>
-      <tr>
-          <th>Yard number</th>
-          <th>Yard name</th>
-          <th>Sale date</th>
-          <th>Sale time</th>
-          <th>Item no</th>
-          <th>Lot number</th>
-          <th>Vehicle type</th>
-          <th>Year</th>
-          <th>Make</th>
-          <th>Model group</th>
-          <th>Model detail</th>
-          <th>Body style</th>
-          <th>Color</th>
-          <th>Damage description</th>
-          <th>Secondary damage</th>
-          <th>Sale title state</th>
-          <th>Sale title type</th>
-          <th>Has keys</th>
-          <th>Lot cond code</th>
-          <th>Vin</th>
-          <th>Odometer</th>
-          <th>Odometer brand</th>
-          <th>Est retail value</th>
-          <th>Engine</th>
-          <th>Drive</th>
-          <th>Transmission</th>
-          <th>Fuel type</th>
-          <th>Cylinders</th>
-          <th>Runs drives</th>
-          <th>Sale status</th>
-          <th>High bid</th>
-          <th>Special note</th>
-          <th>City</th>
-          <th>State</th>
-          <th>Zip</th>
-          <th>Country</th>
-          <th>Currency code</th>
-          <th>Thumbnail</th>
-          <th>Cop created date</th>
-          <th>Grid rows</th>
-          <th>Offer eligible</th>
-          <th>Buy now price</th>
-          <th colspan="3"></th>
-      </tr>
-    </thead>
+ <!-- Basic Table -->
+ <div class="row clearfix">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="card">
+      <div class="header">
+        Admin Lots
+        <%= link_to 'New Admin Lot', new_admin_lot_path, :class=> "btn btn-small btn-primary pull-right" %>
+        <ul class="header-dropdown m-r--5">
+          <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <i class="material-icons">more_vert</i>
+            </a>
+            <ul class="dropdown-menu pull-right">
+              <li><a href="javascript:void(0);">Action</a></li>
+              <li><a href="javascript:void(0);">Another action</a></li>
+              <li><a href="javascript:void(0);">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="body table-responsive">
 
-    <tbody>
-      <% @admin_lots.each do |admin_lot| %>
-        <tr>
-            <td><%= admin_lot.yard_number %></td>
-            <td><%= admin_lot.yard_name %></td>
-            <td><%= admin_lot.sale_date %></td>
-            <td><%= admin_lot.sale_time %></td>
-            <td><%= admin_lot.item_no %></td>
-            <td><%= admin_lot.lot_number %></td>
-            <td><%= admin_lot.vehicle_type %></td>
-            <td><%= admin_lot.year %></td>
-            <td><%= admin_lot.make %></td>
-            <td><%= admin_lot.model_group %></td>
-            <td><%= admin_lot.model_detail %></td>
-            <td><%= admin_lot.body_style %></td>
-            <td><%= admin_lot.color %></td>
-            <td><%= admin_lot.damage_description %></td>
-            <td><%= admin_lot.secondary_damage %></td>
-            <td><%= admin_lot.sale_title_state %></td>
-            <td><%= admin_lot.sale_title_type %></td>
-            <td><%= admin_lot.has_keys %></td>
-            <td><%= admin_lot.lot_cond_code %></td>
-            <td><%= admin_lot.vin %></td>
-            <td><%= admin_lot.odometer %></td>
-            <td><%= admin_lot.odometer_brand %></td>
-            <td><%= admin_lot.est_retail_value %></td>
-            <td><%= admin_lot.engine %></td>
-            <td><%= admin_lot.drive %></td>
-            <td><%= admin_lot.transmission %></td>
-            <td><%= admin_lot.fuel_type %></td>
-            <td><%= admin_lot.cylinders %></td>
-            <td><%= admin_lot.runs_drives %></td>
-            <td><%= admin_lot.sale_status %></td>
-            <td><%= admin_lot.high_bid %></td>
-            <td><%= admin_lot.special_note %></td>
-            <td><%= admin_lot.city %></td>
-            <td><%= admin_lot.state %></td>
-            <td><%= admin_lot.zip %></td>
-            <td><%= admin_lot.country %></td>
-            <td><%= admin_lot.currency_code %></td>
-            <td><%= admin_lot.thumbnail %></td>
-            <td><%= admin_lot.cop_created_date %></td>
-            <td><%= admin_lot.grid_rows %></td>
-            <td><%= admin_lot.offer_eligible %></td>
-            <td><%= admin_lot.buy_now_price %></td>
-            <td><%= link_to 'Show', admin_lot %></td>
-          <td><%= link_to 'Edit', edit_admin_lot_path(admin_lot) %></td>
-          <td><%= link_to 'Destroy', admin_lot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Yard name</th>
+              <th>Lot number</th>
+              <th>Vehicle type</th>
+              <th>Year</th>
+              <th>Make</th>
+              <th>Model group</th>
+              <th>Model detail</th>
+              <th>Body style</th>
+              <th>Color</th>
+              <th>Vin</th>
+              <th>Odometer</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @admin_lots.each do |admin_lot| %>
+            <tr>
+              <td><%= admin_lot.yard_name %></td>
+              <td><%= admin_lot.lot_number %></td>
+              <td><%= admin_lot.vehicle_type %></td>
+              <td><%= admin_lot.year %></td>
+              <td><%= admin_lot.make %></td>
+              <td><%= admin_lot.model_group %></td>
+              <td><%= admin_lot.model_detail %></td>
+              <td><%= admin_lot.body_style %></td>
+              <td><%= admin_lot.color %></td>
+              <td><%= admin_lot.vin %></td>
+              <td><%= admin_lot.odometer %></td>
+              <td><%= link_to 'Show', admin_lot %></td>
+              <td><%= link_to 'Edit', edit_admin_lot_path(admin_lot) %></td>
+              <td><%= link_to 'Destroy', admin_lot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
+</div>
+            <!-- #END# Basic Table -->

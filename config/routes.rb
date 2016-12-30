@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   get 'lots/show'
 
   namespace :admin do
-    get '/' => "dashboard#index"
+    get '/' => "lots#index"
     resources :lots
+    get 'dashboard/upload' => "dashboard#upload_csv"
   end
   get 'pages/home'
   get 'pages/csv'
@@ -19,4 +20,6 @@ Rails.application.routes.draw do
   	resources :bids
   end
   root "pages#home"
+
+  mount Resque::Server.new, :at => "/resque"
 end
