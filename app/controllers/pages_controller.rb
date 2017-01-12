@@ -11,7 +11,7 @@ class PagesController < ApplicationController
 
   def csv
   	# Saving each row as hash into array of csv_data
-  	base_url = "/Users/amanullahtanweer/Projects/mitsab/public/salesdata.csv"
+  	base_url = "/home/sharjeel/projects/mitsab-rails/public/small.csv"
   	Resque.enqueue(Sleeper)
   	l = "done!"
   	render json: l

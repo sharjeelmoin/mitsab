@@ -4,7 +4,7 @@ class Sleeper
 	def self.perform
 
 	csv_data = []
-    CSV.foreach('/Users/amanullahtanweer/Projects/mitsab/public/salesdata.csv', headers: true, :encoding => 'ISO-8859-1') do |row|
+    CSV.foreach('/home/sharjeel/projects/mitsab-rails/public/small.csv', headers: true, :encoding => 'ISO-8859-1') do |row|
       lot = {
               yard_number: row['Yard number'],
               yard_name: row['Yard name'],

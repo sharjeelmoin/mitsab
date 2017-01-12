@@ -99,8 +99,8 @@ section.site-nav {
 					color: #000000;
 				    text-decoration: none;
 				    margin: 0 auto;
-				    text-align: center;
 				    font-weight: bold;
+				    font-size: 17px;
 				}
 
 				&:hover{
@@ -1092,3 +1092,24 @@ section.contact{
 	}
 }
 /*slicknav*/
+
+.container_full {
+    width: 100%;
+    max-width: 1350px;
+}
+.img-left{
+	float: left;
+
+	@include media("<=991px") {
+    	float: none;
+    	margin: 0 auto;
+	}
+}
+.img-right{
+	float: right;
+
+	@include media("<=991px") {
+    	float: none;
+    	margin: 0 auto;
+	}
+}
