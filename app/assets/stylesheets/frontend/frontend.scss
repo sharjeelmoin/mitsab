@@ -23,7 +23,7 @@ body{
 .accordion-area{
 	display: none;
 
-	@include media("<=991px") {
+	@include media("<=1100px") {
     	display: block;
 	}
 }
@@ -247,6 +247,7 @@ section.banner{
 	    border-radius: 3px;
 	    padding: 8px;
 	    font-size: 13px;
+	    margin-bottom: 40px;
 	    &:hover{
 	    	background-color: $red-hover;
 	    }
@@ -256,7 +257,7 @@ section.dropdown_area{
 
 	border-bottom: 1px solid#ccc;
 	padding-bottom: 13px;
-	@include media("<=991px") {
+	@include media("<=1100px") {
     	display: none;
 	}
 	.selectpicker{
