@@ -775,6 +775,15 @@ section.why-mitsab{
 		    padding-left: 15px;
 		}
 	}
+	.row_flex {
+		display: flex;
+	}
+	.text_image{
+
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	    background-position: center center;
+	}
 	.detail {
 		padding-top: 30px;
 	    padding-left: 50px;
@@ -1117,7 +1126,7 @@ section.contact{
 }
 /*slicknav*/
 
-.container_full {
+/*.container_full {
     width: 100%;
     max-width: 1350px;
 }
@@ -1137,8 +1146,4 @@ section.contact{
     	margin: 0 auto;
 	}
 }
-
-
-.newClass{
-	margin-top: 20px;
-}
+*/
