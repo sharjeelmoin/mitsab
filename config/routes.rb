@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'search'   => 'search#index'
   get  'about'   => "pages#about"
   get  'contact' => "pages#contact"
+  get  'error' => "pages#error"
   
   devise_for :users
 
