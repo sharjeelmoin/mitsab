@@ -19,6 +19,13 @@ body{
     top: 59px;
     z-index: 10;
     background-color: #fff;
+
+    #hidden-searches{
+    	display: none;
+    }
+	#show_searches{
+		display: block;
+	}    
 }
 .accordion-area{
 	display: none;
@@ -428,7 +435,7 @@ section.dropdown_area{
 	.thumbnail_image{
 		height: 197px;
 
-		@include media("<=991px") {
+		@include media("<=767") {
 			height: auto;
 		}
 	}

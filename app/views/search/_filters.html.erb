@@ -1,5 +1,5 @@
 <section class="dropdown_area affix-search">
-	<div class="container">
+	<div class="container" id="hidden-searches">
 		<div class="row">
 			<div class="col-md-3 col-sm-6 col-xs-12">
 				<select class="selectpicker" data-size="5" >
@@ -210,7 +210,7 @@
 	
 </section><!-- accordion for responsive searches -->
 
-<button type="button" class="btn btn-info res_btn affix" data-toggle="modal" data-target=".bs-example-modal-lg">Search</button>
+<button type="button" class="btn btn-info res_btn affix" id="show_searches" data-toggle="modal" data-target=".bs-example-modal-lg">Search</button>
 
 <section class="modal-area">
 	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
@@ -422,8 +422,3 @@
 	  	</div>
 	</div>
 </section>
-
-<script type="text/javascript">
-	$('.res_btn').affix({offset: {top: 150} });
-
-</script>
