@@ -20,6 +20,22 @@
 					        <h4>Buy Price: $6500</h4>
 				      	</div>
 			    	</div>
+			    	<div class="item">
+			      		<img class="img-responsive" src="<%= asset_path('slider-img-3')%>" alt="...">
+			      		<div class="carousel-caption">
+					        <h2>2008 FORD CROWN VIC</h2>
+					        <h4>Current Bid: $4000</h4>
+					        <h4>Buy Price: $6500</h4>
+				      	</div>
+			    	</div>
+			    	<div class="item">
+			      		<img class="img-responsive" src="<%= asset_path('slider-img-3')%>" alt="...">
+			      		<div class="carousel-caption">
+					        <h2>2008 FORD CROWN VIC</h2>
+					        <h4>Current Bid: $4000</h4>
+					        <h4>Buy Price: $6500</h4>
+				      	</div>
+			    	</div>
 			  	</div>
 			  	<!-- Controls -->
 				<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -40,7 +56,7 @@
 					  		<% @lots.each do | lot | %>
 					    	<div class="col-md-4 col-sm-6 col-xs-12">
 								<div class="thumbnail">
-									<img class="img-responsive" src="<%= thumbnail_large(lot.thumbnail) %>" >
+									<img class="img-responsive thumbnail_image" src="<%= thumbnail_large(lot.thumbnail) %>" >
 									<div class="caption">
 										<a href="/lots/<%= lot.lot_number %>" class="thumbnail-car-title" role="button"><%= lot.year %> <%= lot.make %> <%= lot.model_group %></a>
 										<span>OH - COLUMBUS  - B / CD001</span>

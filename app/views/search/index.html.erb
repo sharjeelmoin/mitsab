@@ -7,7 +7,7 @@
 			<% @lots.each do | lot | %>
 			<div class="col-md-3 col-sm-6 col-xs-12">
 				<div class="thumbnail">
-					<img class="img-responsive" src="<%= thumbnail_large(lot.thumbnail) %>" >
+					<img class="img-responsive thumbnail_image" src="<%= thumbnail_large(lot.thumbnail) %>" >
 					<div class="caption">
 						<a href="/lots/<%= lot.lot_number %>" class="thumbnail-car-title" role="button"><%= lot.year %> <%= lot.make %> <%= lot.model_group %></a>
 						<span>OH - COLUMBUS  - B / CD001</span>
