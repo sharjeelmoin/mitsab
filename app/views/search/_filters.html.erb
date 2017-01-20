@@ -1,5 +1,5 @@
 <section class="dropdown_area affix-search">
-	<div class="container" id="hidden-searches">
+	<div class="container">
 		<div class="row">
 			<div class="col-md-3 col-sm-6 col-xs-12">
 				<select class="selectpicker" data-size="5" >
@@ -210,10 +210,10 @@
 	
 </section><!-- accordion for responsive searches -->
 
-<button type="button" class="btn btn-info res_btn affix" id="show_searches" data-toggle="modal" data-target=".bs-example-modal-lg">Search</button>
+<button type="button" class="btn btn-info res_btn" data-toggle="modal" data-target=".bs-example-modal-lg">Search</button>
 
-<section class="modal-area">
-	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+<section class="modal-area ">
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabefaffixl">
 	  	<div class="modal-dialog modal-lg" role="document">
 		    <div class="modal-content">
 				<div class="container">
@@ -422,3 +422,46 @@
 	  	</div>
 	</div>
 </section>
+
+<script type="text/javascript">
+/*jQuery(function($) {
+
+    var $nav = $('#scroll_div');
+    var $win = $(window);
+  	var windowHeight = $(window).height();
+    var winH = windowHeight - 60
+
+    $win.on("scroll", function () {
+        if ($(this).scrollTop() > winH ) {
+            $nav.addClass("hidden_searches");
+  					$("body").addClass("body-sticky");
+        } else {
+            $nav.removeClass("hidden_searches");
+  					$("body").removeClass("body-sticky");
+        }
+    }).on("resize", function(){ // If the user resizes the window
+       winH = $(this).height(); // you'll need the new height value
+    });
+
+});*/
+$(window).scroll(function() {    
+
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 300) {
+        $(".dropdown_area").addClass("hidden_searches");
+    }else{
+    	$(".dropdown_area").removeClass("hidden_searches");
+    }
+
+});
+$(document).ready(function () {
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.res_btn').addClass(".red-btn");
+        } 
+    });
+});
+
+
+</script> 

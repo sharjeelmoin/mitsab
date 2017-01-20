@@ -18,26 +18,24 @@ body{
     width: 100%;
     top: 59px;
     z-index: 10;
-    background-color: #fff;
-
-    #hidden-searches{
-    	display: none;
-    }
-	#show_searches{
-		display: block;
-	}    
+    background-color: #fff; 
 }
-.accordion-area{
+.hidden_searches{
 	display: none;
-
-	@include media("<=1100px") {
-    	display: block;
-	}
-
 }
+.button_none{
+	display: none !important;
+}
+
+/*form*/
+.fixed_form {
+	position: fixed;
+    top: 95px;
+    width: 100%;
+    max-width: 250px;
+}
+/*form*/
 section.logo-nav{
-	padding-top: 20px;
-	padding-bottom: 20px;
 
 	@include media("<=991px") {
     	display: none;
@@ -56,7 +54,7 @@ section.logo-nav{
     	display: block;
     	font-size: 14px;
     	border-radius: 3px;
-    	margin-top: 18px;
+    	margin-top: 30px;
 
     	@include media("<=991px") {
 	    	display: none;
@@ -67,6 +65,9 @@ section.logo-nav{
     		background-color: $red-hover;
     	}
 	}//header_buttons
+	img{
+		height: 105px;
+	}
 }/*logo-nav*/
 
 section.site-nav {
@@ -231,7 +232,7 @@ section.banner{
 }/*banner*/
 
 .res_btn {
-    background-color: $red;
+	background-color: $red;
     border: none;
     margin: 0 auto;
     display: block;
@@ -239,12 +240,6 @@ section.banner{
     padding: 8px;
     font-size: 13px;
     margin-bottom: 0;
-    display: none;
-
-    @include media("<=1100px") {
-    	display: block;
-	}
-
     &:hover{
     	background-color: $red-hover;
     }
@@ -331,6 +326,10 @@ section.dropdown_area{
 		font-size: 12px;
 		display: block;
 		font-family: "acumin-pro";
+
+		@include media("<=1200px") {
+			font-size: 9px;;
+		}
 	}
 	
 	.span-inline{
@@ -353,6 +352,12 @@ section.dropdown_area{
 		border-bottom: 1px solid $red;
 		margin-top: 5px;
 		margin-bottom: 5px;
+
+		@include media("<=1200px") {
+			font-size: 12px;;
+		}
+		 
+
 	}
 
 	.retail_price_home {
@@ -372,10 +377,7 @@ section.dropdown_area{
     		font-weight: 500;
 
 			@include media("<=1199px") {
-			    font-size: 18px;
-			}
-			@include media("<=400px") {
-				font-size: 16px;
+			    font-size: 16px;
 			}
 		}
 	}
@@ -397,10 +399,7 @@ section.dropdown_area{
     		font-weight: 500;
 
 			@include media("<=1199px") {
-			    font-size: 18px;
-			}
-			@include media("<=400px") {
-				font-size: 16px;
+			    font-size: 16px;
 			}
 
 		}
@@ -415,17 +414,11 @@ section.dropdown_area{
 		border: none;
 		color: #fff;
 
-		@include media("<=1199px") {
-	        width: 47%;
-    		margin-bottom: 10px;
-    		font-size: 12px;
-    		line-height: 20px;
-		}
-
-		@include media("<=991px") {
+		@include media("<=1200px") {
 		    width: 100%;
 		    height: 40px;
 		    padding-top: 10px;
+	        margin-bottom: 10px;
 		}  
 
 		&:hover{
@@ -433,9 +426,10 @@ section.dropdown_area{
 		}
 	}
 	.thumbnail_image{
-		height: 197px;
+		height: 158px;
+		width: 100%;
 
-		@include media("<=767") {
+		@include media("<=767px") {
 			height: auto;
 		}
 	}
@@ -724,6 +718,10 @@ section.footer{
 	.price_wrapper {
 		margin-top: 5px;
 		margin-bottom: 15px;
+
+		@include media("<=1200px") {
+		    font-size: 12px;
+		}
 	}
 	.thumbnail{
 		border: none;
@@ -770,6 +768,13 @@ section.footer{
 		background-color: $red;
 		border: none;
 		color: #fff;
+
+		@include media("<=1200px") {
+		    width: 100%;
+		    height: 27px;
+		    padding-top: 3px;
+		}  
+
 		@include media("<=400px") {
 			width: 100%;
 			margin-bottom: 10px;

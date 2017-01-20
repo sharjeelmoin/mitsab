@@ -163,7 +163,7 @@
 <section class="why-mitsab">
 	<div class="container-fluid">
 		<div class="row row_flex">
-			<div class="col-md-6 text_image right-padding" style="background-image:url(assets/wy-mitsab.jpg); ">
+			<div class="col-md-6 hidden-sm hidden-xs text_image right-padding" style="background-image:url(assets/wy-mitsab.jpg); ">
 				
 			</div><!-- col-6 -->
 			<div class="col-md-5 pad-left col-xs-12">
@@ -228,3 +228,18 @@
 	</div>
 </section> -->
 
+<script type="text/javascript">
+
+$(window).scroll(function() {    
+
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 300) {
+        $(".form-container").addClass("fixed_form");
+    }else{
+    	$(".form-container").removeClass("fixed_form");
+    }
+});
+
+    
+</script>
