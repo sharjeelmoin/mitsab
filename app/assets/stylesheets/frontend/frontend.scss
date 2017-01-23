@@ -23,10 +23,15 @@ body{
 .hidden_searches{
 	display: none;
 }
-.button_none{
-	display: none !important;
+.modal_center{
+    transform: translate(0, 120px) !important;
 }
 
+.fixed_button{
+	position: fixed;
+	top: 100px;
+	
+}
 /*form*/
 .fixed_form {
 	position: fixed;
@@ -232,27 +237,32 @@ section.banner{
 }/*banner*/
 
 .res_btn {
-	background-color: $red;
+	background-color: #d60303;
     border: none;
     margin: 0 auto;
-    display: block;
     border-radius: 3px;
     padding: 8px;
     font-size: 13px;
-    margin-bottom: 0;
+    top: 82px;
+    width: 100%;
+    z-index: 99;
+
     &:hover{
     	background-color: $red-hover;
     }
 }
 
 .modal-area{
+	.modal {
+	    padding-left: 15px;
+	}
 	.selectpicker{
 	    height: 34px;
+		width: 100%;
 	    margin: 0 auto;
 	    margin-bottom: 17px;
 
 	    @include media("<=1100px") {
-	    	
 	    	width: 100%;
 		}
 	}

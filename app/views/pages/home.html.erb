@@ -251,5 +251,12 @@ $(window).scroll(function() {
         $(".form-container").removeClass("fixed_form");
     }
 });
+$(window).width(function() {    
 
+    var width = $(window).scrollTop();
+
+    if (width >= 991) {
+        $(".form-container").removeClass("fixed_form");
+    }
+});
 </script>

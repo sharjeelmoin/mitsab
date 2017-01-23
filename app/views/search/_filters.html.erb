@@ -210,13 +210,19 @@
 	
 </section><!-- accordion for responsive searches -->
 
-<button type="button" class="btn btn-info res_btn" data-toggle="modal" data-target=".bs-example-modal-lg">Search</button>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<button type="button" class="btn btn-info res_btn" data-toggle="modal" data-target=".bs-example-modal-lg">Search</button>
+		</div>
+	</div>
+</div> 
 
 <section class="modal-area ">
-	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabefaffixl">
-	  	<div class="modal-dialog modal-lg" role="document">
-		    <div class="modal-content">
-				<div class="container">
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  		<div class="modal-dialog modal-lg" role="document">
+	    	<div class="modal-content">
+	      		<div class="container">
 					<div class="row">
 						<div class="col-md-3 col-xs-6 ">
 							<select class="selectpicker" data-size="5" >
@@ -416,8 +422,9 @@
 								<option>Salsa</option>
 							</select>
 						</div><!-- col-3 -->
+						<input type="button" name="">
 					</div><!-- row -->
-				</div><!-- container -->      
+				</div><!-- container -->
 	    	</div>
 	  	</div>
 	</div>
@@ -455,13 +462,38 @@ $(window).scroll(function() {
     }
 
 });
-$(document).ready(function () {
+/*$(document).ready(function () {
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
-            $('.res_btn').addClass(".red-btn");
+        if ($(this).scrollTop() <= 300) {
+            $('.res_btn').addClass(".");
+        }else{
+        	$('.res_btn').removeClass(".red-btn");
         } 
     });
-});
+});*/
+   $(window).scroll(function() {
 
-
+    if ($(this).scrollTop() <= 300)
+     {
+        $('.res_btn').fadeOut(-1000);
+     }
+    else
+     {
+      $('.res_btn').fadeIn(-1000);
+     }
+ });
 </script> 
+
+<script>
+	$(window).scroll(function() {    
+
+	    var scroll = $(window).scrollTop();
+
+	    if (scroll >= 300) {
+	        $(".res_btn").addClass("fixed_button");
+	    }else{
+	    	$(".res_btn").removeClass("fixed_button");
+	    }
+	});
+
+</script>
