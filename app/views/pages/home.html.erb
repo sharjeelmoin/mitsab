@@ -228,7 +228,9 @@
 	</div>
 </section> -->
 
-<script type="text/javascript">
+
+
+<script type="text/javascript">/* this script is for form sticky on homepage */
 
 $(window).scroll(function() {    
 
@@ -241,5 +243,13 @@ $(window).scroll(function() {
     }
 });
 
-    
+$(window).scroll(function() {    
+
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 700) {
+        $(".form-container").removeClass("fixed_form");
+    }
+});
+
 </script>
