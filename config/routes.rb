@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'pages/smarter'
   get 'search'   => 'search#index'
   get  'about'   => "pages#about"
+  get  'whyMitsab'   => "pages#whyMitsab"
   get  'contact' => "pages#contact"
   get  'error' => "pages#error"
   

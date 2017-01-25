@@ -23,23 +23,8 @@ body{
 .hidden_searches{
 	display: none;
 }
-.modal_center{
-    transform: translate(0, 120px) !important;
-}
 
-.fixed_button{
-	position: fixed;
-	top: 100px;
-	
-}
-/*form*/
-.fixed_form {
-	position: fixed;
-    top: 95px;
-    width: 100%;
-    max-width: 250px;
-}
-/*form*/
+
 section.logo-nav{
 
 	@include media("<=991px") {
@@ -130,27 +115,6 @@ section.site-nav {
 		height:auto;
 		background-color: #fff;
 	}
-
-	/*.sale-vehicle{
-	    font-size: 25px;
-	    position: absolute;
-	    right: 15px;
-	    bottom: -20px;
-	    font-weight: 600;
-		span{
-		    font-size: 13px;
-    		width: 100%;
-    		max-width: 74px;
-    		text-align: right;
-    		position: absolute;
-    		right: 97px;
-    		bottom: -5px;
-    		font-weight: 400;
-		}
-		@include media("<=991px") {
-			display: none;
-		}	
-	}*/
 	.sale-vehicle {
 	    text-align: right;
 	    line-height: 1;
@@ -236,52 +200,12 @@ section.banner{
 
 }/*banner*/
 
-.res_btn {
-	background-color: #d60303;
-    border: none;
-    margin: 0 auto;
-    border-radius: 3px;
-    padding: 8px;
-    font-size: 13px;
-    top: 82px;
-    width: 100%;
-    z-index: 99;
 
-    &:hover{
-    	background-color: $red-hover;
-    }
-}
-
-.modal-area{
-	.modal {
-	    padding-left: 15px;
-	}
-	.selectpicker{
-	    height: 34px;
-		width: 100%;
-	    margin: 0 auto;
-	    margin-bottom: 17px;
-
-	    @include media("<=1100px") {
-	    	width: 100%;
-		}
-	}
-	.modal-content {
-		padding-top: 15px;
-	}
-	.modal-dialog {
-	    width: 100%;
-	    margin: 0;
-	}
-
-}
 section.dropdown_area{
 
 	border-bottom: 1px solid#ccc;
 	padding-bottom: 13px;
-	@include media("<=1100px") {
-    	display: none;
-	}
+	
 	.selectpicker{
 		height: 34px;
 		width: 100%;
@@ -581,6 +505,10 @@ section.footer{
 	    box-shadow: none;
 	}
 	.carousel-caption{
+		line-height: 0.4;
+		line-height: 0.4;
+		background-color: rgba(113, 112, 112, 0.5);
+    	border-radius: 11px;
 		h2{
 			@include media("<=991px") {
 			    font-size: 18px;
@@ -607,12 +535,6 @@ section.footer{
 	.form-input select{
 		height: 36px;
 	}
-}
-.carousel-caption{
-	line-height: 0.4;
-	line-height: 0.4;
-    background-color: rgba(113, 112, 112, 0.5);
-    border-radius: 11px;
 }
 .form-container {
 	width: 100%;
@@ -697,6 +619,17 @@ section.footer{
 		&:hover{
 			background-color: $red-hover;
 			text-decoration: none;
+		}
+	}
+
+	.btn-on {
+		@include media("<=1199px") {
+			width: 54%;
+		}
+	}
+	.btn-off {
+		@include media("<=1199px") {
+			width: 46%;
 		}
 	}
 }/*form-container*/
@@ -1061,7 +994,7 @@ section.why-mitsab{
 
 /*card page css*/
 
-section.about_sec{
+section.detail_page{
 	h1{
 		font-size: 26px;
 		line-height: 30px;
@@ -1164,26 +1097,3 @@ section.contact{
 		display: block;
 	}
 }
-/*slicknav*/
-
-/*.container_full {
-    width: 100%;
-    max-width: 1350px;
-}
-.img-left{
-	float: left;
-
-	@include media("<=991px") {
-    	float: none;
-    	margin: 0 auto;
-	}
-}
-.img-right{
-	float: right;
-
-	@include media("<=991px") {
-    	float: none;
-    	margin: 0 auto;
-	}
-}
-*/
