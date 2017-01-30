@@ -9,6 +9,18 @@ body{
 *{
 	outline: none;
 }
+.f_left {
+	float: left;
+	@include media("<=991px") {
+	    float: none;
+	}
+}
+.f_right {
+	float: right;
+	@include media("<=991px") {
+	    float: none;
+	}
+}
 .affix-menu{
     top: 0;
     width: 100%;
@@ -368,6 +380,7 @@ section.dropdown_area{
 		}
 	}
 }/*thumbnail_area*/
+
 .search-pagination{
 	text-align: center;
 	margin: 0 auto;
@@ -543,7 +556,7 @@ section.footer{
 	border-radius: 2px;
 	background-color: #fff;
 	@include media("<=991px") {
-		margin-top: 15px;
+		margin-bottom: 15px;
 	}
 	h3 {
 		background-color: $red;

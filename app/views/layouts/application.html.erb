@@ -156,7 +156,62 @@ $(function(){
 });
 </script>
 
-<script>
+<script type="text/javascript">
+$(document).ready(function() {
+var limit =$('.logo-nav').height() + $('.site-nav').height() + $('.banner').height();
+var limit2 = ($('body').height()) - (limit + 1165);
 
+   $(window).scroll(function() {
+       var scrollVal = $(this).scrollTop();
+        // if ( scrollVal > limit0 ) {
+        //    $(".form-container").addClass("fixed_form");
+        // }else{
+        // 	$(".form-container").removeClass("fixed_form");
+        // }
+
+        if(scrollVal > limit)
+        {
+        	$(".form-container").addClass("fixed_form");
+        	if(scrollVal > limit2)
+        	{
+        		$(".form-container").addClass("unfix_form");	
+        	}else{
+        		$(".form-container").removeClass("unfix_form");
+        	}
+        }
+        else {
+        	 $(".form-container").removeClass("fixed_form");
+        }
+
+   /*     if (scrollVal > limit) {
+		    $(".form-container").addClass("fixed_form");
+		} else if (scrollVal > limit2) {
+		    $(".form-container").addClass("unfix_form");
+		} else {
+		    $(".form-container").removeClass("fixed_form");
+		}*/
+    });
+   
+ });
 </script>
+<style type="text/css">
+	.fixed_form {
+	position: fixed;
+    top: 60px;
+    width: 100%;
+    max-width: 255px;
+    @include media("<=991px") {
+    	
+    	position: static;
+    	width: 100%;
+    	max-width: none;
+	}
+}
+.unfix_form {
+	position: relative;
+    top: 60px;
+    width: 100%;
+    max-width: 255px;
+}
+</style>
 </html>
