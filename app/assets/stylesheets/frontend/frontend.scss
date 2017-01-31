@@ -35,7 +35,28 @@ body{
 .hidden_searches{
 	display: none;
 }
+.fixed_form {
+	position: fixed;
+    top: 60px;
+    width: 100%;
+    max-width: 262px;
 
+    @include media("<=1100px") {
+    	max-width: 220px;
+	}
+    @include media("<=991px") {
+    	margin-bottom: 15px;
+    	position: static !important;
+    	width: 100% !important;
+   		max-width: none !important;
+	}
+}
+.unfix_form {
+	position: relative;
+    top: 60px;
+    width: 100%;
+    max-width: 255px;
+}
 
 section.logo-nav{
 
@@ -618,12 +639,13 @@ section.footer{
 	}
 	a {
 		background-color: $red;
-		padding: 10px 89px;
+	    padding: 10px;
 		color: #fff;
 		display: block;
 		margin-top: 20px;
 		border-radius: 2px;
 		font-size: 14px;
+	    text-align: center;
 		@include media("<=1199px") {
 			text-align: center;
 			padding-left: 0;
