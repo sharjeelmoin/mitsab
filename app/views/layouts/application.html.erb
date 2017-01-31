@@ -50,7 +50,7 @@
 		</div><!-- container -->
 	</section><!-- logo-nav -->
 
-	<section class="site-nav affix-menu">
+	<section class="site-nav affix affix-menu" data-spy="affix" data-offset-top="100">
 		<div class="container-fluid">
 			<div class="row" id="margin-menu">
 				<div class="col-md-9">
@@ -151,10 +151,11 @@ $(function(){
         $('#menu').slicknav({
         label:'MENU',
         prependTo:'#margin-menu',
-        brand: '<img src="<%= asset_path('logo')%>" alt="">' 
+        brand: '<img src="<%= asset_path('logoNew')%>" alt="">' 
 });
 });
 </script>
+
 
 <script type="text/javascript">
 $(document).ready(function() {

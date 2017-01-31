@@ -9,6 +9,9 @@ body{
 *{
 	outline: none;
 }
+.body-sticky{
+	padding-top: 20px;
+}
 .f_left {
 	float: left;
 	@include media("<=991px") {
@@ -59,12 +62,14 @@ body{
     max-width: 255px;
 }
 .filter_icon {
-    -ms-transform: translate(50px, 100px);
-    -webkit-transform: translate(50px, 100px);
-    transform: translate(-47px, 0px);
     position: fixed;
     top: 77px;
     font-size: 20px;
+    background-color: $red;
+    color: #fff;
+    padding: 12px;
+    border-radius: 2px;
+    z-index: 99;
 
     @include media("<=991px") {
 	    transform: translate(-15px, 0px);
@@ -185,6 +190,8 @@ section.banner{
 	background:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), asset-url("banner.png");
 	height: 247px;
     margin-bottom: 60px;
+    background-repeat: no-repeat;
+    background-size: cover;
 
 	h2 {
 		color: #fff;
@@ -264,8 +271,12 @@ section.dropdown_area{
 		}    
 		
 	}//selectpicker
-}/*dropdown_area*/
 
+
+}/*dropdown_area*/
+.model_picker{
+	margin:10px 0;
+}
 
 .thumbnail_area {
 	margin-top: 30px;
@@ -1116,8 +1127,8 @@ section.contact{
 	display:none ;
 }
 .slicknav_brand img {
-    height: 40px;
-    margin-top: -5px;
+    height: 71px;
+    margin-top: -20px;
 }
 .header_responsive_button{
 	display: none;
