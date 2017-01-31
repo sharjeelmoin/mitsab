@@ -51,13 +51,26 @@ body{
    		max-width: none !important;
 	}
 }
+
 .unfix_form {
 	position: relative;
     top: 60px;
     width: 100%;
     max-width: 255px;
 }
+.filter_icon {
+    -ms-transform: translate(50px, 100px);
+    -webkit-transform: translate(50px, 100px);
+    transform: translate(-47px, 0px);
+    position: fixed;
+    top: 77px;
+    font-size: 20px;
 
+    @include media("<=991px") {
+	    transform: translate(-15px, 0px);
+	} 
+
+}
 section.logo-nav{
 
 	@include media("<=991px") {
@@ -240,7 +253,7 @@ section.dropdown_area{
 	padding-bottom: 13px;
 	
 	.selectpicker{
-		height: 34px;
+		height: 36px;
 		width: 100%;
 		max-width: 250px;
 		margin-bottom: 17px;
