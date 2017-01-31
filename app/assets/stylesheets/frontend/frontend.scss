@@ -9,7 +9,7 @@ body{
 *{
 	outline: none;
 }
-.body-sticky{
+.body-stickyf{
 	padding-top: 20px;
 }
 .f_left {
@@ -65,12 +65,16 @@ body{
     position: fixed;
     top: 77px;
     font-size: 20px;
-    background-color: $red;
+    background-color: #d60303;
     color: #fff;
     padding: 12px;
+    border: none;
     border-radius: 2px;
+    margin-top: 5px;
     z-index: 99;
-
+    height: 55px;
+    width: 100%;
+    max-width: 55px;
     @include media("<=991px") {
 	    transform: translate(-15px, 0px);
 	} 
@@ -819,7 +823,7 @@ section.why-mitsab{
 	    background-position: center center;
 	}
 	.detail {
-		padding: 15px 64px 15px 50px;
+		padding: 0 64px 15px 50px;
 		@include media("<=1199px") {
 			padding-top: 0;
 		    padding-left: 15px;
