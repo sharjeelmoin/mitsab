@@ -45,7 +45,7 @@ body{
     max-width: 262px;
 
     @include media("<=1100px") {
-    	max-width: 220px;
+    	max-width: 212px;;
 	}
     @include media("<=991px") {
     	margin-bottom: 15px;
@@ -60,6 +60,10 @@ body{
     top: 333px;
     width: 100%;
     max-width: 262px;
+
+    @include media("<=1100px") {
+    	max-width: 212px;;
+	}
 }
 .filter_icon {
     position: fixed;
@@ -546,9 +550,7 @@ section.footer{
 }
 
 
-*{
-	outline:none;
-}
+
 .slider-area{
 	margin-bottom: 15px;
 
