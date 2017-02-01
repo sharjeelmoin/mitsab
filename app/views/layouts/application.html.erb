@@ -146,7 +146,16 @@
 </script>
 
 
+<script>
 
+$(function(){
+        $('#menu').slicknav({
+        label:'MENU',
+        prependTo:'#margin-menu',
+        brand: '<%= link_to(root_path) do %><img src="<%= asset_path('logoNew')%>" alt=""><%end%>' 
+});
+});
+</script>
 
 <script type="text/javascript">
 $(document).ready(function() {
