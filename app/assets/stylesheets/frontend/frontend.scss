@@ -84,6 +84,23 @@ body{
 	} 
 
 }
+.search_btn{
+    height: 88px;
+    width: 100%;
+    display: block;
+    color: #fff;
+    font-size: 26px;
+    background-color: $red;
+    text-align: center;
+    padding-top: 25px;
+    border-radius: 4px;
+
+    &:hover ,&:focus{
+    	background-color: $red-hover;
+    	text-decoration: none;
+    	color: #fff;
+    }
+}
 section.logo-nav{
 
 	@include media("<=991px") {
