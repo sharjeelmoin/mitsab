@@ -90,11 +90,16 @@ body{
     display: block;
     color: #fff;
     font-size: 26px;
-    background-color: $red;
+    background-color: #d60303;
     text-align: center;
-    padding-top: 25px;
+    padding-top: 26px;
     border-radius: 4px;
-
+    font-family: "acumin-pro";
+    @include media("<=991px") {
+    	margin: 10px 0;
+    	height: 78px;
+		padding-top: 20px;
+	}
     &:hover ,&:focus{
     	background-color: $red-hover;
     	text-decoration: none;
