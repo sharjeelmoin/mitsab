@@ -1,126 +1,66 @@
+<form action="/search" method="GET">
 <section class="dropdown_area">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3 col-sm-6 col-xs-12">
-				<select class="selectpicker form-control" data-size="5" >
-					<option>Featured Items</option>
-					<option>Classics</option>
-					<option>Buy It Now</option>
-					<option>Engine Start Program </option>
-					<option>Enhanced Vehicles</option>
-					<option>Featured Vehicles</option>
-					<option>Fleet / Lease</option>
-					<option>Hot Items</option>
-					<option>Municipal Fleet</option>
-					<option>New Items</option>
-					<option>No License Required </option>
-					<option>Offsite Sales </option>
-					<option>Pure Sale Items</option>
-					<option>Recovered Thefts</option>
-					<option>Run and Drive</option>
-					<option>Sealed Bid Repossessions</option>
+				<select class="selectpicker form-control" data-size="5" name="make">
+					<option value="">-- Select Make --</option>
+					<% @makes = Lot.uniq.pluck(:make) %>
+					<% @makes.each do | make | %>
+					<% unless make.blank? %>
+					<option <% if params[:make] == make %> selected <% end %> value="<%= make %>"><%= make %></option>
+					<% end %>
+					<% end %>
 				</select>
 
-				<select class="selectpicker form-control" data-size="5" >
-					<option>Featured Items</option>
-					<option>Classics</option>
-					<option>Buy It Now</option>
-					<option>Engine Start Program </option>
-					<option>Enhanced Vehicles</option>
-					<option>Featured Vehicles</option>
-					<option>Fleet / Lease</option>
-					<option>Hot Items</option>
-					<option>Municipal Fleet</option>
-					<option>New Items</option>
-					<option>No License Required </option>
-					<option>Offsite Sales </option>
-					<option>Pure Sale Items</option>
-					<option>Recovered Thefts</option>
-					<option>Run and Drive</option>
-					<option>Sealed Bid Repossessions</option>
+				<select class="selectpicker form-control" data-size="5" name="color">
+					<option value="">-- Select Color --</option>
+					<% @colors = Lot.uniq.pluck(:color) %>
+					<% @colors.each do | color | %>
+						<% unless color.blank? %>
+						<option <% if params[:color] == color %> selected <% end %> value="<%= color %>"><%= color %></option>
+						<% end %>
+					<% end %>
 				</select>
 			</div><!-- col-3 -->
 			<div class="col-md-3 col-sm-6 col-xs-12">
-				<select class="selectpicker form-control" data-size="5" >
-					<option>Featured Items</option>
-					<option>Classics</option>
-					<option>Buy It Now</option>
-					<option>Engine Start Program </option>
-					<option>Enhanced Vehicles</option>
-					<option>Featured Vehicles</option>
-					<option>Fleet / Lease</option>
-					<option>Hot Items</option>
-					<option>Municipal Fleet</option>
-					<option>New Items</option>
-					<option>No License Required </option>
-					<option>Offsite Sales </option>
-					<option>Pure Sale Items</option>
-					<option>Recovered Thefts</option>
-					<option>Run and Drive</option>
-					<option>Sealed Bid Repossessions</option>
+				<select class="selectpicker form-control" data-size="5" name="drive">
+					<option value="">-- Select Drive --</option>
+					<% @drives = Lot.uniq.pluck(:drive) %>
+					<% @drives.each do | drive | %>
+					<% unless drive.blank? %>
+					<option <% if params[:drive] == drive %> selected <% end %> value="<%= drive %>"><%= drive %></option>
+					<% end %>
+					<% end %>
 				</select>
 
-				<select class="selectpicker form-control" data-size="5" >
-					<option>Featured Items</option>
-					<option>Classics</option>
-					<option>Buy It Now</option>
-					<option>Engine Start Program </option>
-					<option>Enhanced Vehicles</option>
-					<option>Featured Vehicles</option>
-					<option>Fleet / Lease</option>
-					<option>Hot Items</option>
-					<option>Municipal Fleet</option>
-					<option>New Items</option>
-					<option>No License Required </option>
-					<option>Offsite Sales </option>
-					<option>Pure Sale Items</option>
-					<option>Recovered Thefts</option>
-					<option>Run and Drive</option>
-					<option>Sealed Bid Repossessions</option>
+				<select class="selectpicker form-control" data-size="5" name="has_keys">
+					<option value="">-- Select Keys --</option>
+					<% @keys = Lot.uniq.pluck(:has_keys) %>
+					<% @keys.each do | has_keys | %>
+					<option <% if params[:has_keys] == has_keys %> selected <% end %> value="<%= has_keys %>"><%= has_keys %></option>
+					<% end %>
 				</select>
 			</div><!-- col-3 -->
 			<div class="col-md-3 col-sm-6 col-xs-12">
-				<select class="selectpicker form-control" data-size="5" >
-					<option>Featured Items</option>
-					<option>Classics</option>
-					<option>Buy It Now</option>
-					<option>Engine Start Program </option>
-					<option>Enhanced Vehicles</option>
-					<option>Featured Vehicles</option>
-					<option>Fleet / Lease</option>
-					<option>Hot Items</option>
-					<option>Municipal Fleet</option>
-					<option>New Items</option>
-					<option>No License Required </option>
-					<option>Offsite Sales </option>
-					<option>Pure Sale Items</option>
-					<option>Recovered Thefts</option>
-					<option>Run and Drive</option>
-					<option>Sealed Bid Repossessions</option>
+				<select class="selectpicker form-control" data-size="5" name="year">
+					<option value="">-- Select Year -- </option>
+					<% @years = Lot.uniq.pluck(:year) %>
+					<% @years.each do | year | %>
+					<option <% if params[:year] == year %> selected <% end %> value="<%= year %>"><%= year %></option>
+					<% end %>
 				</select>
-
-				<select class="selectpicker form-control" data-size="5" >
-					<option>Featured Items</option>
-					<option>Classics</option>
-					<option>Buy It Now</option>
-					<option>Engine Start Program </option>
-					<option>Enhanced Vehicles</option>
-					<option>Featured Vehicles</option>
-					<option>Fleet / Lease</option>
-					<option>Hot Items</option>
-					<option>Municipal Fleet</option>
-					<option>New Items</option>
-					<option>No License Required </option>
-					<option>Offsite Sales </option>
-					<option>Pure Sale Items</option>
-					<option>Recovered Thefts</option>
-					<option>Run and Drive</option>
-					<option>Sealed Bid Repossessions</option>
+				<select class="selectpicker form-control" data-size="5" name="state">
+					<option value="">Select State</option>
+					<% @states = Lot.uniq.pluck(:state) %>
+					<% @states.each do | state | %>
+					<option <% if params[:state] == state %> selected <% end %> value="<%= state %>"><%= state %></option>
+					<% end %>
 				</select>
 			</div><!-- col-3 -->
 
 			<div class="col-md-3 col-sm-6 col-xs-12">
-				<a href="/" class="search_btn">Search</a>
+				<button type="submit" class="search_btn">Search</button>
 			</div><!-- col-3 -->
 		</div><!-- row -->
 	</div><!-- container -->
@@ -144,132 +84,75 @@
     <div class="modal-content" style="padding: 10px;">
 		<div class="row">
 			<div class="col-md-3 col-sm-6 col-xs-12">
-				<select class="selectpicker form-control model_picker" data-size="5" >
-					<option>Featured Items</option>
-					<option>Classics</option>
-					<option>Buy It Now</option>
-					<option>Engine Start Program </option>
-					<option>Enhanced Vehicles</option>
-					<option>Featured Vehicles</option>
-					<option>Fleet / Lease</option>
-					<option>Hot Items</option>
-					<option>Municipal Fleet</option>
-					<option>New Items</option>
-					<option>No License Required </option>
-					<option>Offsite Sales </option>
-					<option>Pure Sale Items</option>
-					<option>Recovered Thefts</option>
-					<option>Run and Drive</option>
-					<option>Sealed Bid Repossessions</option>
+
+				<select class="selectpicker form-control model_picker" data-size="5" name="make">
+					<option value="">-- Select Make --</option>
+					<% @makes = Lot.uniq.pluck(:make) %>
+					<% @makes.each do | make | %>
+					<% unless make.blank? %>
+					<option <% if params[:make] == make %> selected <% end %> value="<%= make %>"><%= make %></option>
+					<% end %>
+					<% end %>
 				</select>
 
-				<select class="selectpicker form-control model_picker" data-size="5" >
-					<option>Featured Items</option>
-					<option>Classics</option>
-					<option>Buy It Now</option>
-					<option>Engine Start Program </option>
-					<option>Enhanced Vehicles</option>
-					<option>Featured Vehicles</option>
-					<option>Fleet / Lease</option>
-					<option>Hot Items</option>
-					<option>Municipal Fleet</option>
-					<option>New Items</option>
-					<option>No License Required </option>
-					<option>Offsite Sales </option>
-					<option>Pure Sale Items</option>
-					<option>Recovered Thefts</option>
-					<option>Run and Drive</option>
-					<option>Sealed Bid Repossessions</option>
+				<select class="selectpicker form-control model_picker" data-size="5" name="color">
+					<option value="">-- Select Color --</option>
+					<% @colors = Lot.uniq.pluck(:color) %>
+					<% @colors.each do | color | %>
+						<% unless color.blank? %>
+						<option <% if params[:color] == color %> selected <% end %> value="<%= color %>"><%= color %></option>
+						<% end %>
+					<% end %>
 				</select>
+
 			</div><!-- col-3 -->
 			<div class="col-md-3 col-sm-6 col-xs-12">
-				<select class="selectpicker form-control model_picker" data-size="5" >
-					<option>Featured Items</option>
-					<option>Classics</option>
-					<option>Buy It Now</option>
-					<option>Engine Start Program </option>
-					<option>Enhanced Vehicles</option>
-					<option>Featured Vehicles</option>
-					<option>Fleet / Lease</option>
-					<option>Hot Items</option>
-					<option>Municipal Fleet</option>
-					<option>New Items</option>
-					<option>No License Required </option>
-					<option>Offsite Sales </option>
-					<option>Pure Sale Items</option>
-					<option>Recovered Thefts</option>
-					<option>Run and Drive</option>
-					<option>Sealed Bid Repossessions</option>
+				
+				<select class="selectpicker form-control model_picker" data-size="5" name="drive">
+					<option value="">-- Select Drive --</option>
+					<% @drives = Lot.uniq.pluck(:drive) %>
+					<% @drives.each do | drive | %>
+					<% unless drive.blank? %>
+					<option <% if params[:drive] == drive %> selected <% end %> value="<%= drive %>"><%= drive %></option>
+					<% end %>
+					<% end %>
 				</select>
 
-				<select class="selectpicker form-control model_picker" data-size="5" >
-					<option>Featured Items</option>
-					<option>Classics</option>
-					<option>Buy It Now</option>
-					<option>Engine Start Program </option>
-					<option>Enhanced Vehicles</option>
-					<option>Featured Vehicles</option>
-					<option>Fleet / Lease</option>
-					<option>Hot Items</option>
-					<option>Municipal Fleet</option>
-					<option>New Items</option>
-					<option>No License Required </option>
-					<option>Offsite Sales </option>
-					<option>Pure Sale Items</option>
-					<option>Recovered Thefts</option>
-					<option>Run and Drive</option>
-					<option>Sealed Bid Repossessions</option>
+				<select class="selectpicker form-control model_picker" data-size="5" name="has_keys">
+					<option value="">-- Select Keys --</option>
+					<% @keys = Lot.uniq.pluck(:has_keys) %>
+					<% @keys.each do | has_keys | %>
+					<option <% if params[:has_keys] == has_keys %> selected <% end %> value="<%= has_keys %>"><%= has_keys %></option>
+					<% end %>
 				</select>
+				
 			</div><!-- col-3 -->
 			<div class="col-md-3 col-sm-6 col-xs-12">
-				<select class="selectpicker form-control model_picker" data-size="5" >
-					<option>Featured Items</option>
-					<option>Classics</option>
-					<option>Buy It Now</option>
-					<option>Engine Start Program </option>
-					<option>Enhanced Vehicles</option>
-					<option>Featured Vehicles</option>
-					<option>Fleet / Lease</option>
-					<option>Hot Items</option>
-					<option>Municipal Fleet</option>
-					<option>New Items</option>
-					<option>No License Required </option>
-					<option>Offsite Sales </option>
-					<option>Pure Sale Items</option>
-					<option>Recovered Thefts</option>
-					<option>Run and Drive</option>
-					<option>Sealed Bid Repossessions</option>
+				<select class="selectpicker form-control model_picker" data-size="5" name="year">
+					<option value="">-- Select Year -- </option>
+					<% @years = Lot.uniq.pluck(:year) %>
+					<% @years.each do | year | %>
+					<option <% if params[:year] == year %> selected <% end %> value="<%= year %>"><%= year %></option>
+					<% end %>
 				</select>
-
-				<select class="selectpicker form-control model_picker" data-size="5" >
-					<option>Featured Items</option>
-					<option>Classics</option>
-					<option>Buy It Now</option>
-					<option>Engine Start Program </option>
-					<option>Enhanced Vehicles</option>
-					<option>Featured Vehicles</option>
-					<option>Fleet / Lease</option>
-					<option>Hot Items</option>
-					<option>Municipal Fleet</option>
-					<option>New Items</option>
-					<option>No License Required </option>
-					<option>Offsite Sales </option>
-					<option>Pure Sale Items</option>
-					<option>Recovered Thefts</option>
-					<option>Run and Drive</option>
-					<option>Sealed Bid Repossessions</option>
+				<select class="selectpicker form-control model_picker" data-size="5" name="state">
+					<option value="">Select State</option>
+					<% @states = Lot.uniq.pluck(:state) %>
+					<% @states.each do | state | %>
+					<option <% if params[:state] == state %> selected <% end %> value="<%= state %>"><%= state %></option>
+					<% end %>
 				</select>
 			</div><!-- col-3 -->
 
 			<div class="col-md-3 col-sm-6 col-xs-12">
-				<a href="/" class="search_btn">Search</a>
+				<button type="submit" class="search_btn">Search</button>
 			</div><!-- col-3 -->
 		</div><!-- row -->
 
     </div>
   </div>
 </div>
-
+</form>
 
 <script type="text/javascript">
 var width = $(window).width(), height = $(window).height();
@@ -279,10 +162,10 @@ $(function () {
 	$(window).scroll(function () {
 		var scrollval = $(window).scrollTop();
 		if (scrollval >= limit) {
-			$(".dropdown_area").hide(1000);
+			//$(".dropdown_area").hide(1000);
 			$(".small_btn").show(0.500);
 		}else{
-			$(".dropdown_area").show(1000);
+			//$(".dropdown_area").show(1000);
 			$(".small_btn").hide(0.500);
 		}
 	});
@@ -291,44 +174,4 @@ $(function () {
 	$(".dropdown_area").hide(0.500);
 	$(".small_btn").show(0.500);
 }
-
-
-
 </script>
-<!-- if you want to disable search icon on banner 
-<script type="text/javascript">
-var width = $(window).width(), height = $(window).height();
-var limit =$('.logo-nav').height() + $('.site-nav').height() + $('.banner').height();
-if (width <= 991) {
-	var scrollval2 = $(window).scrollTop();
-	$(".dropdown_area").hide(1000); 
-
-	$(window).scroll(function () {
-		var scrollval2 = $(window).scrollTop();
-		if (scrollval2 > 329) {
-			//$(".dropdown_area").hide(1000);
-			$(".small_btn").show(0.500);
-		}else{
-			//$(".dropdown_area").show(1000);
-			$(".small_btn").hide(0.500);
-		}
-
-	});
-
-} else {
-	$(window).scroll(function () {
-		var scrollval = $(window).scrollTop();
-		if (scrollval >= limit) {
-			$(".dropdown_area").hide(1000);
-			$(".small_btn").show(0.500);
-		}else{
-			$(".dropdown_area").show(1000);
-			$(".small_btn").hide(0.500);
-		}
-	});
-}
-
-
-
-
-</script> -->

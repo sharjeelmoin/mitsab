@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/' => "lots#index"
+    get '/auction' => "dashboard#auction"
     resources :lots
     get 'dashboard/upload' => "dashboard#upload_csv"
   end
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
   get 'pages/smarter'
   get 'search'   => 'search#index'
   get  'about'   => "pages#about"
-  get  'whyMitsab'   => "pages#whyMitsab"
+  get  'why-mitsab'   => "pages#why_mitsab"
   get  'contact' => "pages#contact"
   get  'error' => "pages#error"
   

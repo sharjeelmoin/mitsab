@@ -144,6 +144,31 @@
 						</tbody>
 					</table>
 				</div><!-- bottom-table -->
+
+				<% if current_user.admin? %>
+				<h1>Bids</h1>
+				<table class="table">
+					<thead>
+					<tr>
+						<th>User</th>
+						<th>Amount</th>
+						<th>Date</th>
+						<th>Action</th>
+					</tr>
+					</thead>
+					<tbody>
+					<% @lot.bids.each do | bid | %>
+					<tr>
+						<td><%= bid.user.first_name %></td>
+						<td><%= bid.amount %></td>
+						<td><%= bid.created_at %></td>
+						<td><a href="#">Approve</a> | <a href="#">Reject</a></td>
+					</tr>
+					</tbody>
+					<% end %>
+				</table>
+			<% end %>
+
 			</div><!-- col-7 -->
 		</div><!-- row -->
 	</div><!-- container -->

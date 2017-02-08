@@ -1,4 +1,5 @@
 <%= render :partial => "shared/search" %>
+<form action="search" method="GET">
 <section class="slider-area">
 	<div class="container">
 		<div class="row">
@@ -6,48 +7,38 @@
 				<div class="form-container">
 					<h3>Vehicle Finder</h3>
 					<div class="form-input">
-						<h4>Car Type</h4>
-						<select class="form-control" data-size="5" >
-						    <option>Mustard1</option>
-						    <option>Ketchup</option>
-						    <option>Relish</option>
-						    <option>Mayonnaise</option>
-						    <option>Barbecue Sauce</option>
-						    <option>Salad Dressing</option>
-						    <option>Tabasco</option>
-						    <option>Salsa</option>
-					    </select>
+						<h4>Make</h4>
+						<select class="selectpicker form-control" data-size="5" name="make">
+							<option value="">Select Make</option>
+							<% @makes = Lot.uniq.pluck(:make) %>
+							<% @makes.each do | make | %>
+							<option value="<%= make %>"><%= make %></option>
+							<% end %>
+						</select>
 					</div><!-- form-input -->
 					<div class="form-input">
 						<h4>Year</h4>
-						<input class="form-control price-from" type="search" placeholder="From">
-						<input class="form-control price-to" type="search" placeholder="To">
+						<input class="form-control" type="search" placeholder="eg: 2005" name="year">
 					</div><!-- form-input -->
 					<div class="form-input">
-						<h4>Make</h4>
-						<select class="form-control" data-size="5" >
-						    <option>Mustard1</option>
-						    <option>Ketchup</option>
-						    <option>Relish</option>
-						    <option>Mayonnaise</option>
-						    <option>Barbecue Sauce</option>
-						    <option>Salad Dressing</option>
-						    <option>Tabasco</option>
-						    <option>Salsa</option>
-					    </select>
+						<h4>Color</h4>
+						<select class="selectpicker form-control" data-size="5" name="color">
+							<option value="">Select Color</option>
+							<% @colors = Lot.uniq.pluck(:color) %>
+							<% @colors.each do | color | %>
+							<option value="<%= color %>"><%= color %></option>
+							<% end %>
+						</select>
 					</div><!-- form-input -->
 					<div class="form-input">
-						<h4>Model</h4>
-						<select class="form-control" data-size="5" >
-						    <option>Mustard1</option>
-						    <option>Ketchup</option>
-						    <option>Relish</option>
-						    <option>Mayonnaise</option>
-						    <option>Barbecue Sauce</option>
-						    <option>Salad Dressing</option>
-						    <option>Tabasco</option>
-						    <option>Salsa</option>
-					    </select>
+						<h4>Body Style</h4>
+						<select class="selectpicker form-control" data-size="5" name="body_style">
+							<option value="">Select Body Style</option>
+							<% @body_styles = Lot.uniq.pluck(:body_style) %>
+							<% @body_styles.each do | body_style | %>
+							<option value="<%= body_style %>"><%= body_style %></option>
+							<% end %>
+						</select>
 					</div><!-- form-input -->
 					<div class="form-input">
 						<h4>Location</h4>
@@ -55,20 +46,17 @@
 			            	<label class="btn btn-default btn-on btn-md active">
 			            	<input type="radio" value="1" name="multifeatured_module[module_id][status]" checked="checked">All Location</label>
 			            	<label class="btn btn-default btn-off btn-md ">
-			            	<input type="radio" value="0" name="multifeatured_module[module_id][status]">Near Me</label>
+			            	<input type="radio" value="0" name="multifeatured_module[module_id][status]">Custom</label>
 			            </div>
-						<select class="form-control" data-size="5" >
-						    <option>Mustard1</option>
-						    <option>Ketchup</option>
-						    <option>Relish</option>
-						    <option>Mayonnaise</option>
-						    <option>Barbecue Sauce</option>
-						    <option>Salad Dressing</option>
-						    <option>Tabasco</option>
-						    <option>Salsa</option>
-					    </select>
+						<select class="selectpicker form-control" data-size="5" name="state">
+							<option value="">Select State</option>
+							<% @states = Lot.uniq.pluck(:state) %>
+							<% @states.each do | state | %>
+							<option value="<%= state %>"><%= state %></option>
+							<% end %>
+						</select>
 					</div><!-- form-input -->
-					<a href="#">Search</a>
+					<button type="submit">Search</button>
 				</div><!-- form-container -->
 			</div><!-- col-3 -->
 			<div class="col-md-9 f_left">
@@ -168,7 +156,7 @@
 			<div class="col-md-6 hidden-sm hidden-xs text_image right-padding" style="background-image:url(assets/wy-mitsab.jpg); ">
 				
 			</div><!-- col-6 -->
-			<div class="col-md-5 pad-left col-xs-12">
+			<div class="col-md-offset-1 col-md-4 pad-left col-xs-12">
 				<div class="detail">
 					<h2>WHY MITSAB</h2>
 				
@@ -179,7 +167,7 @@
 		</div><!-- row -->
 		<div class="row row_flex">
 			
-			<div class="col-md-5 col-xs-12">
+			<div class="col-md-offset-1 col-md-4 col-xs-12">
 				<div class="detail">
 					<h2>ABOUT US</h2>
 				
@@ -194,5 +182,5 @@
 		</div><!-- row -->
 	</div><!-- container -->
 </section><!-- why-mitsab -->
-
+</form>
 

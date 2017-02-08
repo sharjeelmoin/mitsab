@@ -1,6 +1,6 @@
 class Bid < ApplicationRecord
 	belongs_to :user
-	belongs_to :lot
+	belongs_to :lot, foreign_key: :lot_id
   validate :amount_greater_than_higest_bid
 
 	def self.highest_bid(lot_id)

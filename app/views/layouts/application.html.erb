@@ -41,7 +41,7 @@
 						<li>
               <%= link_to('
               
-              Logout'.html_safe, destroy_user_session_path, :method => :delete) %>
+              Logout'.html_safe, destroy_user_session_path, :method => :delete, :class => "header_buttons") %>
             </li>
             <% end %>
 					</ul>
@@ -56,27 +56,19 @@
 				<div class="col-md-9">
 					<ul class="list-inline"  id="menu">
 						<li><a href="/search">Find a Car </a></li>
-						<li><a href="/search">Auction</a></li>
-						<li><a href="/whyMitsab">Why Mitsab</a></li>
-						<li><a href="">How to Buy</a></li>
+						<li><a href="/search?auction=yes">Auction</a></li>
+						<li><a href="/search?buy_now_price=yes">Buy it now</a></li>
+						<!-- <li><a href="/search">Auction</a></li> -->
+						<li><a href="/why-mitsab">Why Mitsab</a></li>
 						<li><a href="/contact">Contact </a></li>
 						<li><a href="/about">About Us</a></li>
-						<% unless user_signed_in? %>
-						<li><a class="header_responsive_button" href="/users/sign_up">Register</a></li>
-						<li><a class="header_responsive_button" href="/users/sign_in">Sign In</a></li>
-						<% else %>
-						<li>
-              <%= link_to('
-              
-              Logout'.html_safe, destroy_user_session_path, :method => :delete) %>
-            </li>
-            <% end %>
+						
 					</ul>
 				</div><!-- col-9 -->
 				<div class="col-md-3">
 					<ul class="list-inline pull-right">
 						<li class="sale-vehicle">Vehicles on<br>sale now!</li>
-						<li class="sale-vehicle-num">126,478</li>
+						<li class="sale-vehicle-num"><%= total_lots_count %></li>
 					</ul>
 				</div><!-- col-3 -->
 			</div><!-- row -->
@@ -142,44 +134,14 @@
 		</div><!-- container -->
 	</section>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/jquery.slicknav.min.js" type="text/javascript">
-</script>
-
-
-<script>
-
-$(function(){
-        $('#menu').slicknav({
-        label:'MENU',
-        prependTo:'#margin-menu',
-        brand: '<%= link_to(root_path) do %><img src="<%= asset_path('logoNew')%>" alt=""><%end%>' 
-});
-});
-</script>
 
 <script type="text/javascript">
-$(document).ready(function() {
-var limit =$('.logo-nav').height() + $('.site-nav').height() + $('.banner').height();
-var exceed_limit = ($('body').height()) - (limit + 1165);
-
-   $(window).scroll(function() {
-       var scrollVal = $(this).scrollTop();
-
-        if(scrollVal > limit)
-        {
-        	$(".form-container").addClass("fixed_form");
-        	if(scrollVal > exceed_limit)
-        	{
-        		$(".form-container").addClass("unfix_form");	
-        	}else{
-        		$(".form-container").removeClass("unfix_form");
-        	}
-        }
-        else {
-        	 $(".form-container").removeClass("fixed_form");
-        }            
-    });
-   
- });
+	$(function(){
+	$('#menu').slicknav({
+	label:'MENU',
+	prependTo:'#margin-menu',
+	brand: '<%= link_to(root_path) do %><img src="<%= asset_path('logoNew')%>" alt=""><%end%>' 
+	});
+});
 </script>
 </html>

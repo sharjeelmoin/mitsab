@@ -6,7 +6,11 @@ class Admin::LotsController < ApplicationController
   # GET /admin/lots
   # GET /admin/lots.json
   def index
-    @admin_lots = Lot.paginate(:page => params[:page], :per_page => 8)
+    #@admin_lots = Lot.paginate(:page => params[:page], :per_page => 8)
+    @admin_lots = Lot.paginate(:page => params[:page], :per_page => 20)
+    filtering_params(params).each do |key, value|
+    @admin_lots = @admin_lots.public_send(key, value) if value.present?
+    end
   end
 
   # GET /admin/lots/1
@@ -72,5 +76,9 @@ class Admin::LotsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_lot_params
       params.require(:admin_lot).permit(:yard_number, :yard_name, :sale_date, :sale_time, :item_no, :lot_number, :vehicle_type, :year, :make, :model_group, :model_detail, :body_style, :color, :damage_description, :secondary_damage, :sale_title_state, :sale_title_type, :has_keys, :lot_cond_code, :vin, :odometer, :odometer_brand, :est_retail_value, :engine, :drive, :transmission, :fuel_type, :cylinders, :runs_drives, :sale_status, :high_bid, :special_note, :city, :state, :zip, :country, :currency_code, :thumbnail, :cop_created_date, :grid_rows, :offer_eligible, :buy_now_price)
+    end
+
+    def filtering_params(params)
+    params.slice(:make, :color, :drive, :has_keys, :year, :state, :lot_number, :buy_now_price, :auction)
     end
 end

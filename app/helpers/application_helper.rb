@@ -44,4 +44,9 @@ module ApplicationHelper
 			date.strftime("%a. %b %d, %Y")
 		end
 	end
+
+	def total_lots_count 
+		return number_with_delimiter(Lot.all.count)
+	end
+
 end
