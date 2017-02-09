@@ -4,9 +4,31 @@
 //= require frontend/cycle2
 //= require frontend/slicknav
 
+/*body remove jerk when nav sticky*/
+jQuery(function($) {
+
+    var $nav = $('#header');
+    var $win = $(window);
+  	var windowHeight = $(window).height();
+    var winH = 100
+
+    $win.on("scroll", function () {
+        if ($(this).scrollTop() > winH ) {
+            $nav.addClass("header-sticky");
+  					$("body").addClass("body-sticky");
+        } else {
+            $nav.removeClass("header-sticky");
+  					$("body").removeClass("body-sticky");
+        }
+    }).on("resize", function(){ // If the user resizes the window
+       winH = $(this).height(); // you'll need the new height value
+    });
+
+});
+
 $(document).ready(function() {
 	var limit =$('.logo-nav').height() + $('.site-nav').height() + $('.banner').height();
-	var exceed_limit = ($('body').height()) - (limit + 1165);
+	var exceed_limit = ($('body').height()) - (limit + 1490);
 
 	$(window).scroll(function() {
 		var scrollVal = $(this).scrollTop();
