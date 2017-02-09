@@ -6,7 +6,72 @@ body{
 	font-family: "acumin-pro";
 	
 }
-/*asda*/
+
+
+.dropdown:hover .dropdown-menu {
+
+    /** Show dropdown menu */
+    display: block;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown .dropdown-menu {
+    /* position: absolute; */
+    top: 100%;
+    margin-top: 0;
+    display: none;
+    padding: 10px;
+    font-size: 16px;
+    list-style: none;
+    width: 100%;
+    /* padding: 0; */
+    background: #575757;
+}
+.dropdown-menu li a {
+    display: block;
+    padding: 3px 0px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: #333333;
+    white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/** Button Styles **/
+.dropdown button {
+    background: transparent;
+    color: #FFFFFF;
+    border: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+}
+
+/** List Item Styles **/
+.dropdown a {
+    display: block;
+    padding: 0;
+    text-decoration: none;
+    background: transparent;
+    color: #333333;
+}
+.inner_a {
+	background: #575757 !important;
+}
+/** List Item Hover Styles **/
+.inner_a:hover {
+    background-color: #6f6d6d !important;
+    border-radius: 3px !important;
+}
+
+
 .dropbtn {
     background-color: #4CAF50;
     color: white;

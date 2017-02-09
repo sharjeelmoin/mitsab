@@ -55,10 +55,23 @@
 			<div class="row" id="margin-menu">
 				<div class="col-md-9">
 					<ul class="list-inline"  id="menu">
-						<li><a href="/search">Find a Car </a></li>
-						<li class="dropbtn"><a class="dropdown-content" href="/search?auction=yes">Auction</a></li>
-						<li><a href="/search?buy_now_price=yes">Buy it now</a></li>
-						<!-- <li><a href="/search">Auction</a></li> -->
+						<!-- <li><a href="/search">Find a Car </a></li>
+						<li><a href="/search?auction=yes">Auction</a></li> -->
+
+						<li>
+							<div class="dropdown">
+						    <!-- trigger button -->
+						    <button><a href="/search">Find a Car &#9662;</a></button>
+						    <!-- dropdown menu -->
+						    <ul class="dropdown-menu">
+						        <li><a class="inner_a" href="/search?auction=yes">Auction</a></li>
+						        <li><a class="inner_a" href="/search?buy_now_price=yes">Buy it now</a></li>
+						    </ul>
+						</div>
+						</li>
+
+						<!-- <li><a href="/search?buy_now_price=yes">Buy it now</a></li>
+						<li><a href="/search">Auction</a></li> -->
 						<li><a href="/why-mitsab">Why Mitsab</a></li>
 						<li><a href="/contact">Contact </a></li>
 						<li><a href="/about">About Us</a></li>
