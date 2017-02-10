@@ -23,6 +23,15 @@ body{
 }
 
 /*logo sticky css end*/
+.res_headerBtn{
+	display: none;
+
+	@include media("<=991px") {
+	    display: block;
+	}
+}
+
+
 /*dropdown css*/
 .dropdown:hover .dropdown-menu {
 
@@ -45,6 +54,9 @@ body{
     width: 100%;
     /* padding: 0; */
     background: #575757;
+    @include media("<=991px") {
+	    background-color: #fff;
+	}
 }
 .dropdown-menu li a {
     display: block;
@@ -68,6 +80,9 @@ body{
     margin: 0;
     padding: 0;
     font-size: 1em;
+    @include media("<=991px") {
+	    padding-left: 10px;
+	}
 }
 
 /** List Item Styles **/
@@ -80,6 +95,9 @@ body{
 }
 .inner_a {
 	background: #575757 !important;
+	@include media("<=991px") {
+	    background-color: #fff !important; 
+	}
 }
 /** List Item Hover Styles **/
 .inner_a:hover {
