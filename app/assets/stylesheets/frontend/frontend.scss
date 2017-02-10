@@ -17,6 +17,9 @@ body{
     width: 100%;
     max-width: 77px;
     margin-top: -8px;
+    @include media("<=991px") {
+	    display: none;
+	}
 }
 
 /*logo sticky css end*/
@@ -129,6 +132,7 @@ body{
  #map {
 	height: 400px;
     width: 100%;
+    margin-bottom: 20px;
 }
 .body-sticky {
 	padding-top: 55px;
