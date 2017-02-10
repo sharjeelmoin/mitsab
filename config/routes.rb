@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get  'about'   => "pages#about"
   get  'faq'   => "pages#faq"
   get  'how_to_buy'   => "pages#how_to_buy"
-  get  'why-mitsab'   => "pages#why_mitsab"
+  get  'why_mitsab'   => "pages#why_mitsab"
   get  'contact' => "pages#contact"
   get  'error' => "pages#error"
   
