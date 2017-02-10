@@ -714,7 +714,15 @@ section.footer{
 		}
 	}
 	.copyright{
-		margin-top:15px;
+	    margin-top: 15px;
+	    /* vertical-align: bottom; */
+	    /* display: flex; */
+	    position: fixed;
+	    bottom: 0;
+	    /* text-align: center; */
+	    display: block;
+	    width: 100%;
+	    left: 0;
 	}
 }
 
