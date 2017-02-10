@@ -7,7 +7,20 @@ body{
 	
 }
 
+/*logo sticky css*/
 
+.logo-unsticky{
+	display: none;
+}	
+.logo-sticky {
+	display: inline;
+    width: 100%;
+    max-width: 77px;
+    margin-top: -8px;
+}
+
+/*logo sticky css end*/
+/*dropdown css*/
 .dropdown:hover .dropdown-menu {
 
     /** Show dropdown menu */
@@ -111,7 +124,7 @@ body{
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
-/*dropdown css*/
+/*dropdown css end*/
 
  #map {
 	height: 400px;

@@ -58,3 +58,23 @@ $(document).ready(function() {
 
 
 });
+
+$(document).ready(function() {
+
+var scrollLogo = 100;
+
+	$(window).scroll(function() {
+		var scrollValue = $(this).scrollTop();
+
+		if(scrollValue > scrollLogo) {
+			$(".logo-unsticky").addClass("logo-sticky");
+			$("logo-sticky").css('transition', 'all ease 0.2s')
+			
+		} else {
+			$(".logo-unsticky").removeClass("logo-sticky");
+		}            
+	});
+
+
+
+});
