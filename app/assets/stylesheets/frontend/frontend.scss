@@ -60,7 +60,7 @@ body{
 }
 .dropdown-menu li a {
     display: block;
-    padding: 3px 0px;
+    padding: 3px 5px;
     clear: both;
     font-weight: normal;
     line-height: 1.42857143;
@@ -714,15 +714,7 @@ section.footer{
 		}
 	}
 	.copyright{
-	    margin-top: 15px;
-	    /* vertical-align: bottom; */
-	    /* display: flex; */
-	    position: fixed;
-	    bottom: 0;
-	    /* text-align: center; */
-	    display: block;
-	    width: 100%;
-	    left: 0;
+	    margin-top: 70px;
 	}
 }
 
