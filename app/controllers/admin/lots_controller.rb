@@ -1,4 +1,4 @@
-class Admin::LotsController < ApplicationController
+class Admin::LotsController < Admin::AdminController
   before_action :authenticate_user!
   layout 'admin'
   before_action :set_admin_lot, only: [:show, :edit, :update, :destroy]

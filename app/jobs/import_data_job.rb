@@ -1,11 +1,12 @@
-class Sleeper < ApplicationJob
-  self.queue_adapter = :resque
-	@queue = :csv_queue
+class ImportDataJob < ApplicationJob
+	self.queue_adapter = :resque
+  queue_as :default
 
-	def self.perform
-
-	csv_data = []
-    CSV.foreach("/Users/amanullahtanweer/Projects/mitsab", headers: true, :encoding => 'ISO-8859-1') do |row|
+  def perform(csv_url)
+  	csv_data = []
+  	url = "/Users/amanullahtanweer/Projects/mitsab/public#{csv_url}"
+  	puts url
+    CSV.foreach(url, headers: true, :encoding => 'ISO-8859-1') do |row|
       lot = {
               yard_number: row['Yard number'],
               yard_name: row['Yard name'],
@@ -54,4 +55,5 @@ class Sleeper < ApplicationJob
     end
       Lot.create(csv_data)
 		end
-end
+
+  end

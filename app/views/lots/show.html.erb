@@ -145,7 +145,7 @@
 					</table>
 				</div><!-- bottom-table -->
 
-				<% if current_user.admin? %>
+				<% if current_user && current_user.admin? %>
 				<h1>Bids</h1>
 				<table class="table">
 					<thead>

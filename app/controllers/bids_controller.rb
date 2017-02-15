@@ -7,11 +7,20 @@ class BidsController < ApplicationController
 
   		respond_to do |format|
         if @bid.save
+          UserMailer.bid_notification_email(@bid,current_user.email).deliver
           format.html { redirect_to lot_path(params[:lot_id]), notice: 'Bid added successfully.' }
         else
           format.html { redirect_to lot_path(params[:lot_id]), :flash => { :error => @bid.errors.full_messages.join(', ') } }
         end
       end
+  end
+
+  def destroy
+    @bid.destroy
+    respond_to do |format|
+      format.html { redirect_to lot_path(params[:lot_id], notice: 'Bid Successfully Deleted' }
+      format.json { head :no_content }
+    end
   end
 
   def update

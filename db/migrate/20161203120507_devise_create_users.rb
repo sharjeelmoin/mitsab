@@ -21,6 +21,14 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
 
       t.string :first_name
       t.string :last_name
+      t.string :company
+      t.string :address_line1
+      t.string :address_line2
+      t.string :country
+      t.string :state
+      t.string :city
+      t.string :zip
+      t.string :phone
       t.boolean  "admin",                  default: false, null: false
       t.integer  "role",                   default: 0,     null: false
       t.string   "skype",                  default: "",    null: false

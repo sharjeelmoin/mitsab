@@ -1,13 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'lots/show'
 
-  namespace :admin do
-    get '/' => "lots#index"
-    get '/auction' => "dashboard#auction"
-    resources :lots
-    get 'dashboard/upload' => "dashboard#upload_csv"
-  end
+  get 'lots/show'
   get 'pages/home'
   get 'pages/csv'
   get 'pages/smarter'
@@ -24,7 +18,16 @@ Rails.application.routes.draw do
   resources :lots do
   	resources :bids
   end
-  root "pages#home"
 
-  mount Resque::Server.new, :at => "/resque"
+  namespace :admin do
+    get '', to: 'lots#index', as: '/' 
+    get '/auction' => "dashboard#auction"
+    resources :lots
+    resources :bulk_upload
+    get 'csv/:id' => "bulk_upload#csv"
+    get 'dashboard/upload' => "dashboard#upload_csv"
+    mount Resque::Server.new, :at => "/resque"
+  end
+
+  root "pages#home"
 end

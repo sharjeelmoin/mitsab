@@ -1,0 +1,18 @@
+<div class="row clearfix">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<div class="card">
+			<div class="header">
+				<h2>
+					FILE UPLOAD - DRAG & DROP OR WITH CLICK & CHOOSE
+					<small>Upload your CSV File here downloaded form <a href="http://www.dropzonejs.com/" target="_blank">copart.com</a></small>
+				</h2>
+			</div>
+			<div class="body">
+				<form action="/admin/bulk_upload" id="frmFileUpload" class="" method="post" enctype="multipart/form-data">
+					<input name="bulk_upload[attachment]" type="file" multiple />
+					<button type="submit">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
