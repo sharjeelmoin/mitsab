@@ -31,6 +31,13 @@
 				</div><!-- thumbnail -->
 			</div><!-- col-3 -->
 			<% end %>
+
+			<% if @lots.count == 0 %>
+			<div class="text-center">
+				<img src="http://www.specialiststationery.com.sg/image/no_search.png" alt="">
+				<h1>Try again</h1>
+			</div>
+			<% end %>
 		</div><!-- row -->
 	</div><!-- container -->
 </section><!-- thumbnail_area -->

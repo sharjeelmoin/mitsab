@@ -16,45 +16,61 @@
 
 			</div>
 			<div class="col-md-7">
-				<h1><%= @lot.year %> <%= @lot.make %> <%= @lot.model_group %> - <%= @lot.id %></h1>
-				<%= form_for([ @lot, @bid]) do |f| %>
-				<span class="export">
-					<ul class="list-inline">
-						<li>Your Max Bid:</li>
-						<li>
-							<%= f.text_field :amount, class: "bid-input", required: "true", placeholder: number_to_currency( Bid.highest_bid(@lot.id) ) %>
-							<%= f.hidden_field :lot_id, value: @lot.id %>
-						</li>
-					</ul>
-				</span>
-				<span class="max-bid">
-					<ul class="list-inline">
-						<li><i class="fa fa-print" aria-hidden="true"></i> Print</li>
-						<li><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</li>
-						<li><a href="#">Back to result</a></li>
-					</ul>
-				</span>
-				<div class="col-md-6 no-padding-left">
-					
-					<div class="thumbnail_color">
-						<p>Current Bid: <span><%= number_to_currency( Bid.highest_bid(@lot.id)) %></span></p>
-						<h5><span style="display: block;font-size: 13px;font-weight: normal;">0 watching </span> 
-							<%if @lot.buy_now_price > 0 %>
-							Buy Now for US <%= number_to_currency(@lot.buy_now_price) %>
-							<% end %>
-						</h5>
-						<div class="thumb_buttons">
-							<input type="submit" class="btn btn-primary thumb_red-btn" value="Make a Bid">
-							<% end %>
-							<%if @lot.buy_now_price > 0 %>
-							<input type="submit" class="btn btn-primary thumb_red-btn" value="Buy Now">
-							<% end %>
-							<p><a href="">Add to watch list</a></p>
+					<h1><%= @lot.year %> <%= @lot.make %> <%= @lot.model_group %> - <%= @lot.id %></h1>
+
+					<% if @lot.active_status == 1 %>
+					<%= form_for([ @lot, @bid]) do |f| %>
+					<span class="export">
+						<ul class="list-inline">
+							<li>Your Max Bid:</li>
+							<li>
+								<%= f.text_field :amount, class: "bid-input", disabled: !@lot.active_status?, required: "true", placeholder: number_to_currency( Bid.highest_bid(@lot.id) ) %>
+								<%= f.hidden_field :lot_id, value: @lot.id %>
+							</li>
+						</ul>
+					</span>
+					<span class="max-bid">
+						<ul class="list-inline">
+							<li><i class="fa fa-print" aria-hidden="true"></i> Print</li>
+							<li><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</li>
+							<li><a href="#">Back to result</a></li>
+						</ul>
+					</span>
+					<div class="col-md-6 no-padding-left">
+						
+						
+						<div class="thumbnail_color">
+
+							<p>Current Bid: <span><%= number_to_currency( Bid.highest_bid(@lot.id)) %></span></p>
+							<h5><span style="display: block;font-size: 13px;font-weight: normal;"><%= @lot.watchlists.count || 0 %> watching </span> 
+
+								<%if @lot.buy_now_price > 0 %>
+								Buy Now for US <%= number_to_currency(@lot.buy_now_price) %>
+								<% end %>
+							</h5>
+							<div class="thumb_buttons">
+								<input type="submit" class="btn btn-primary thumb_red-btn" value="Make a Bid">
+									<% end %>
+								<%if @lot.buy_now_price > 0 %>
+								<input type="submit" class="btn btn-primary thumb_red-btn" value="Buy Now">
+								<% end %>
+								<%= form_for([ @lot, @watchlist]) do |f| %>
+								<%= f.hidden_field :lot_id, value: @lot.id %>
+								<p><button type="submit" class="btn btn-primary thumb_red-btn">Add to watch list</button></p>
+								<% end %>
+							</div>
+							<h6>This vehicle is being sold as as is - where is. All bids are binding and all sales are final. </h6>
 						</div>
-						<h6>This vehicle is being sold as as is - where is. All bids are binding and all sales are final. </h6>
-					</div>
-					
 				</div>
+				<% else %>
+							<div class="col-md-6 no-padding-left">
+					<div class="start_text">
+						<h6>Bidding Closed</h6>
+						<p><span>Browse our current inventory</span></p>
+						<p><span><a class="btn btn-primary red-btn" href="#">View Inventory</a></span></p>
+					</div>
+				</div>
+				<% end %>
 				<div class="col-md-6 no-padding-right">
 					<div class="start_text">
 						<h6>Seller Info</h6>
@@ -146,27 +162,29 @@
 				</div><!-- bottom-table -->
 
 				<% if current_user && current_user.admin? %>
-				<h1>Bids</h1>
-				<table class="table">
-					<thead>
-					<tr>
-						<th>User</th>
-						<th>Amount</th>
-						<th>Date</th>
-						<th>Action</th>
-					</tr>
-					</thead>
-					<tbody>
-					<% @lot.bids.each do | bid | %>
-					<tr>
-						<td><%= bid.user.first_name %></td>
-						<td><%= bid.amount %></td>
-						<td><%= bid.created_at %></td>
-						<td><a href="#">Approve</a> | <a href="#">Reject</a></td>
-					</tr>
-					</tbody>
+				<% if @lot.active_status == 1 %>
+					<h1>Bids</h1>
+					<table class="table">
+						<thead>
+						<tr>
+							<th>User</th>
+							<th>Amount</th>
+							<th>Date</th>
+							<th>Action</th>
+						</tr>
+						</thead>
+						<tbody>
+						<% @lot.bids.each do | bid | %>
+						<tr>
+							<td><%= bid.user.first_name %></td>
+							<td><%= bid.amount %></td>
+							<td><%= bid.created_at %></td>
+							<td><a href="/admin/bids/approve/<%= bid.id %>">Approve</a> | <a href="/admin/bids/reject/<%= bid.id %>">Reject</a></td>
+						</tr>
+						</tbody>
+						<% end %>
+					</table>
 					<% end %>
-				</table>
 			<% end %>
 
 			</div><!-- col-7 -->

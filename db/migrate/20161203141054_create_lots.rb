@@ -44,6 +44,7 @@ class CreateLots < ActiveRecord::Migration[5.0]
       t.string :offer_eligible
       t.integer :buy_now_price
       t.integer :amount, default: 0,     null: false
+      t.integer :active_status, default: 1,     null: false
 
       t.timestamps
     end

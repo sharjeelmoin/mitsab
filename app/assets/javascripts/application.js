@@ -14,10 +14,10 @@ jQuery(function($) {
 
     $win.on("scroll", function () {
         if ($(this).scrollTop() > winH ) {
-            $nav.addClass("header-sticky");
+            $nav.addClass("affix affix-menu header-sticky");
   					$("body").addClass("body-sticky");
         } else {
-            $nav.removeClass("header-sticky");
+            $nav.removeClass("affix affix-menu header-sticky");
   					$("body").removeClass("body-sticky");
         }
     }).on("resize", function(){ // If the user resizes the window

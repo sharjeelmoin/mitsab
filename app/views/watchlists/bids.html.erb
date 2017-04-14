@@ -1,0 +1,49 @@
+<div class="gray_page_title">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>My Bids</h1>
+    </div>
+  </div>
+</div>
+</div>
+<section class="detail_page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="table-responsive">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Lot #</th>
+                <th>Name</th>
+                <th>Retail Price</th>
+                <th>Current Bid</th>
+                <th>Your Bid</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @mybids = current_user.bids %>
+              <% @mybids.each do |watchlist| %>
+              <tr>
+                <td><a href="/lots/<%= watchlist.lot.id%>">
+                  <img src="<%= thumbnail_large(watchlist.lot.thumbnail) %>" alt="" width="24">
+                </a></td>
+                <td><a href="/lots/<%= watchlist.lot.id%>"><%= watchlist.lot.id %></a></td>
+                <td><%= watchlist.lot.year %> <%= watchlist.lot.make %> <%= watchlist.lot.model_group %></td>
+                <td><%= number_to_currency(watchlist.lot.est_retail_value) %></td>
+                <td><%= number_to_currency( Bid.highest_bid(watchlist.lot.id)) %></td>
+                <td><%= number_to_currency( watchlist.amount ) %></td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

@@ -75,7 +75,7 @@ class Admin::LotsController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_lot_params
-      params.require(:admin_lot).permit(:yard_number, :yard_name, :sale_date, :sale_time, :item_no, :lot_number, :vehicle_type, :year, :make, :model_group, :model_detail, :body_style, :color, :damage_description, :secondary_damage, :sale_title_state, :sale_title_type, :has_keys, :lot_cond_code, :vin, :odometer, :odometer_brand, :est_retail_value, :engine, :drive, :transmission, :fuel_type, :cylinders, :runs_drives, :sale_status, :high_bid, :special_note, :city, :state, :zip, :country, :currency_code, :thumbnail, :cop_created_date, :grid_rows, :offer_eligible, :buy_now_price)
+      params.require(:admin_lot).permit(:yard_number, :yard_name, :sale_date, :sale_time, :item_no, :lot_number, :vehicle_type, :year, :make, :model_group, :model_detail, :body_style, :color, :damage_description, :secondary_damage, :sale_title_state, :sale_title_type, :has_keys, :lot_cond_code, :vin, :odometer, :odometer_brand, :est_retail_value, :engine, :drive, :transmission, :fuel_type, :cylinders, :runs_drives, :sale_status, :high_bid, :special_note, :city, :state, :zip, :country, :currency_code, :thumbnail, :cop_created_date, :grid_rows, :offer_eligible, :buy_now_price, :active_status)
     end
 
     def filtering_params(params)

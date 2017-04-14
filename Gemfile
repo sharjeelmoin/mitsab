@@ -10,6 +10,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
+gem 'authority'
+gem 'rolify'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem "devise-bootstrap4-views", git: "git@task.intellecta.co:rails-libs/devise-bootstrap4-views.git"
 gem "font-awesome-rails"

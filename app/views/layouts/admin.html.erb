@@ -33,8 +33,8 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
-                <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="javascript:void(0);">Mitsab - Dashboard</a>
+                <a href="/" class="bars"></a>
+                <a class="navbar-brand" href="/admin">Mitsab - Dashboard</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -42,10 +42,10 @@
                     <!-- #END# Call Search -->
 
                     <!-- Notifications -->
-                    <li class="dropdown">
+                    <li class="dropdown" style="display:none">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <i class="material-icons">notifications</i>
-                            <span class="label-count">7</span>
+                            <span class="label-count"><% Bid.all.count %></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li class="header">NOTIFICATIONS</li>
@@ -182,31 +182,31 @@
                 <ul class="list">
                     <li class="header">MAIN MENU</li>
                     <li>
-                        <a href="javascript:void(0);">
+                        <a href="/admin">
                             <i class="material-icons">home</i>
                             <span>Dashboard</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/admin">
+                        <a href="/admin/lots">
                             <i class="material-icons">assignment</i>
                             <span>Manage Lots</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/admin?auction=yes">
+                        <a href="/admin/lots?auction=yes">
                             <i class="material-icons">gavel</i>
                             <span>Auctions</span>
                         </a>
                     </li>
                     <li>
-                        <a href="admin/users/">
+                        <a href="/admin/users/">
                             <i class="material-icons">supervisor_account</i>
                             <span>User Management</span>
                         </a>
                     </li>
                     <li>
-                        <a href="admin/users/">
+                        <a href="/admin/reports/">
                             <i class="material-icons">pie_chart</i>
                             <span>Reports</span>
                         </a>
@@ -217,13 +217,13 @@
                             <span>Finance</span>
                         </a>
                     </li>
-                    <li>
+                    <li style="display:none">
                         <a href="admin/users/">
                             <i class="material-icons">settings_backup_restore</i>
                             <span>System Settings</span>
                         </a>
                     </li>
-                    <li>
+                    <li style="display:none">
                         <a href="javascript:void(0);">
                             <i class="material-icons">layers</i>
                             <span>Help Desk</span>
@@ -237,7 +237,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/admin/resque">
+                        <a href="/admin/dashboard/resque">
                             <i class="material-icons">all_inclusive</i>
                             <span>Background Jobs</span>
                         </a>

@@ -294,6 +294,9 @@ section.site-nav {
 	font-size: 18px;
 	padding-top: 17px;
 	color: #fff;
+	width: 100%;
+    top: 0;
+    z-index: 99999;
 	
 	/*@include media("<=991px") {
     	.header_responsive_button{
@@ -618,7 +621,6 @@ section.footer{
     background-color: #575757;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 331px;
     padding-top: 30px;
     padding-bottom: 30px;
     color: #fff;
@@ -665,6 +667,8 @@ section.footer{
 
 		@include media("<=991px") {
 			padding-left: 0;
+			border-bottom: 1px solid #ccc;
+    padding-bottom: 12px;
 		}
 
 		li{
@@ -1468,4 +1472,23 @@ section.contact{
 button.search_btn {
     border: none !important;
     padding-top: 0px !important;
+}
+
+.red-btn {
+	display: block;
+    background-color: #d60303;
+    margin-bottom: 9px;
+    padding-left: 18px;
+    padding-top: 4px;
+    padding-right: 18px;
+    color: #fff;
+    height: 32px;
+    text-align: center;
+    width: 100%;
+    border: none;
+
+    &:hover {
+    	text-decoration: none;
+    	background-color: #ef2b2b;
+    }
 }

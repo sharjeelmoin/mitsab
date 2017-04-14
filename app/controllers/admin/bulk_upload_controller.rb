@@ -37,8 +37,8 @@ class Admin::BulkUploadController < Admin::AdminController
     @attachment_csv = BulkUpload.find(params[:id])
     if @attachment_csv
       @attachment_url = @attachment_csv.attachment.url
-      # Resque.enqueue(Sleeper)
-      ImportDataJob.perform_later(@attachment_url)
+
+      ImportDataJob.perform_later(@attachment_url, @attachment_csv.id)
       redirect_to admin_bulk_upload_index_path, notice: "Background Job Schedueld"
     end
 

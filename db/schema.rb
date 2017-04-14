@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170214115137) do
+ActiveRecord::Schema.define(version: 20170402202825) do
 
   create_table "bids", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "amount"
@@ -23,8 +23,9 @@ ActiveRecord::Schema.define(version: 20170214115137) do
 
   create_table "bulk_uploads", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "attachment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "status",     default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "lots", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -71,8 +72,19 @@ ActiveRecord::Schema.define(version: 20170214115137) do
     t.string   "offer_eligible"
     t.integer  "buy_now_price"
     t.integer  "amount",             default: 0, null: false
+    t.integer  "active_status",      default: 1, null: false
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+  end
+
+  create_table "roles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "resource_type"
+    t.integer  "resource_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
+    t.index ["name"], name: "index_roles_on_name", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -88,6 +100,14 @@ ActiveRecord::Schema.define(version: 20170214115137) do
     t.string   "last_sign_in_ip"
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "company"
+    t.string   "address_line1"
+    t.string   "address_line2"
+    t.string   "country"
+    t.string   "state"
+    t.string   "city"
+    t.string   "zip"
+    t.string   "phone"
     t.boolean  "admin",                  default: false, null: false
     t.integer  "role",                   default: 0,     null: false
     t.string   "skype",                  default: "",    null: false
@@ -97,13 +117,24 @@ ActiveRecord::Schema.define(version: 20170214115137) do
     t.boolean  "blocked",                default: false, null: false
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.string   "country"
-    t.string   "state"
-    t.string   "city"
-    t.string   "zip"
-    t.string   "phone"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "users_roles", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "user_id"
+    t.integer "role_id"
+    t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
+  end
+
+  create_table "watchlists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "lot_id"
+    t.integer  "user_id"
+    t.integer  "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lot_id"], name: "index_watchlists_on_lot_id", using: :btree
+    t.index ["user_id"], name: "index_watchlists_on_user_id", using: :btree
   end
 
 end

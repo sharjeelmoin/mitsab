@@ -2,8 +2,9 @@ class ImportDataJob < ApplicationJob
 	self.queue_adapter = :resque
   queue_as :default
 
-  def perform(csv_url)
+  def perform(csv_url, csv_id)
   	csv_data = []
+    BulkUpload.update(csv_id, {:status => 1})
   	url = "/Users/amanullahtanweer/Projects/mitsab/public#{csv_url}"
   	puts url
     CSV.foreach(url, headers: true, :encoding => 'ISO-8859-1') do |row|
@@ -54,6 +55,7 @@ class ImportDataJob < ApplicationJob
       csv_data << lot
     end
       Lot.create(csv_data)
+      BulkUpload.update(csv_id, {:status => 2})
 		end
 
   end

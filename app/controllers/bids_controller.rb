@@ -14,18 +14,7 @@ class BidsController < ApplicationController
         end
       end
   end
-
-  def destroy
-    @bid.destroy
-    respond_to do |format|
-      format.html { redirect_to lot_path(params[:lot_id], notice: 'Bid Successfully Deleted' }
-      format.json { head :no_content }
-    end
-  end
-
-  def update
-  end
-
+  
   private
   def bid_params
   	params.require(:bid).permit(:amount, :user_id, :lot_id)

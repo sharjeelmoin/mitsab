@@ -4,15 +4,26 @@ class UserMailer < ApplicationMailer
   def bid_notification_email(bid,email)
   	@bid = bid
   	@email = email
-    mail(to: "inheritedarts@gmail.com", subject: 'Thank you for your bid')
+    mail(to: email, subject: 'Thank you for your bid')
   end
 
-  def contact_email(name, city, state, email, phone)
+  def bid_notification_rejected(bid,email)
+    @bid = bid
+    @email = email
+    mail(to: email, subject: 'Thank you for your bid')
+  end
+
+  def bid_notification_awarded(bid,email)
+    @bid = bid
+    @email = email
+    mail(to: email, subject: 'Thank you for your bid')
+  end
+
+  def contact_email(name, email, phone, message)
         @name = name
-        @city = city
-        @state = email
         @email = email
         @phone = phone
+        @message = message
         mail(to: "inheritedarts@gmail.com", subject: 'Contact Request')
   end
 

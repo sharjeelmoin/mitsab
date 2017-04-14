@@ -8,10 +8,18 @@
 				</h2>
 			</div>
 			<div class="body">
+				<form action="/admin/bulk_upload" id="frmFileUpload" class="" method="post" enctype="multipart/form-data">
+					<input name="bulk_upload[attachment]" type="file" multiple />
+					<br>
+					<button type="submit" class="btn btn-primary">Submit</button>
+					<hr>
+				</form>
+
 				<table class="table table-striped table-hover">
 					<thead>
 						<th>Date</th>
-						<th width="70%">File Name</th>
+						<th width="65%">File Name</th>
+						<th>Status</th>
 						<th>Action</th>
 					</thead>
 					<tbody>
@@ -19,6 +27,15 @@
 					<tr>
 						<td><%= upload.created_at.strftime("%Y-%m-%d  %H:%M:%S") %></td>
 						<td><%= upload.attachment.url %></td>
+						<% if upload.status == 0 %>
+						<td><span class="badge bg-pink">Not Imported</span></td>
+						<% end %>
+						<% if upload.status == 1 %>
+						<td><span class="badge bg-orange">Processing</span></td>
+						<% end %>
+						<% if upload.status == 2 %>
+						<td><span class="badge bg-teal">Complete</span></td>
+						<% end %>
 						<td><a href="/admin/csv/<%= upload.id %>">Import</a></td>
 					</tr>
 					<% end %>

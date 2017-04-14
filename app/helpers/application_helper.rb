@@ -49,4 +49,12 @@ module ApplicationHelper
 		return number_with_delimiter(Lot.all.count)
 	end
 
+	def total_auction_count
+		return number_with_delimiter(Bid.all.count)
+	end
+
+	def total_users_count
+		return number_with_delimiter(User.all.count)
+	end
+
 end

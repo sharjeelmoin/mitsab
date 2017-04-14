@@ -8,9 +8,9 @@ class Admin::DashboardController < Admin::AdminController
     @admin_lots = Lot.paginate(:page => params[:page], :per_page => 8)
   end
 
-	def upload_csv
-		
-	end
+  def resque
+  	
+  end
 
 	private
 	def authenticate_admin!

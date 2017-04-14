@@ -5,6 +5,7 @@ class LotsController < ApplicationController
   def show
   	#render json: @lot
   	@bid = Bid.new
+  	@watchlist = Watchlist.new
   end
 
   private

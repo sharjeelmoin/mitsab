@@ -12,6 +12,8 @@ class Lot < ApplicationRecord
 
 	self.primary_key = 'lot_number'
 	validates :lot_number, uniqueness: true
-	has_many :bids
-	accepts_nested_attributes_for :bids
+  has_many :bids
+	has_many :watchlists
+  accepts_nested_attributes_for :bids
+	accepts_nested_attributes_for :watchlists
 end
